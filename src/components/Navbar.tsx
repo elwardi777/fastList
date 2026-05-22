@@ -280,6 +280,18 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
 
         <div className="border-b border-white/[0.06]">
           <a
+            href="/support"
+            onClick={onClose}
+            className="flex w-full items-center justify-between py-4 text-[16px] uppercase
+                       font-semibold tracking-[0.08em] text-white/90
+                       font-['Inter',sans-serif] hover:text-white cursor-pointer"
+          >
+            {t('nav.support')}
+          </a>
+        </div>
+
+        <div className="border-b border-white/[0.06]">
+          <a
             href="/corporate/contact"
             onClick={onClose}
             className="flex w-full items-center justify-between py-4 text-[16px] uppercase
@@ -348,6 +360,14 @@ export default function Navbar() {
           {NAV_GROUPS.map((group) => (
             <DesktopDropdown key={group.title} group={group} scrolled={scrolled} />
           ))}
+          <a
+            href="/support"
+            className={`px-3 py-2 text-[14px] uppercase font-medium tracking-[0.08em]
+                       transition-colors duration-200 cursor-pointer font-['Inter',sans-serif]
+                       ${scrolled ? 'text-white/90 hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+          >
+            {t('nav.support')}
+          </a>
           <a
             href="/corporate/contact"
             className={`px-3 py-2 text-[14px] uppercase font-medium tracking-[0.08em]
