@@ -16,11 +16,10 @@ interface CatalogItem {
 }
 
 const GALLERY_IMAGES: GalleryImage[] = [
-  { src: '/images/governor-1.jpg', alt: 'Speed Governor Front View' },
-  { src: '/images/governor-2.jpg', alt: 'Speed Governor Side View' },
-  { src: '/images/governor-3.jpg', alt: 'Speed Governor Detail' },
-  { src: '/images/governor-hero.png', alt: 'Speed Governor Hero' },
-  { src: '/images/governor-4.jpg', alt: 'Speed Governor Assembly' },
+  { src: '/images/6779a6c7-c66c-4a51-b3ca-185ea2d6a6d3.jfif', alt: 'Speed Governor Front View' },
+  { src: '/images/6de34a95-7714-4412-8154-c3c5040ec89f.jfif', alt: 'Speed Governor Side View' },
+  { src: '/images/f6d7fe15-bded-4906-9800-bfdc7cb6d91a.jfif', alt: 'Speed Governor Detail' },
+  { src: '/images/WhatsApp Image 2026-05-21 at 17.13.55 (1).jpeg', alt: 'Speed Governor Hero' },
 ];
 
 

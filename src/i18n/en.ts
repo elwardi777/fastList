@@ -1,7 +1,7 @@
 const en = {
   nav: {
     corporate: 'Corporate',
-    mediaCenter: 'Media Center',
+    mediaCenter: 'PRODUCT GALLERY',
     productGroups: 'Product Groups',
     aboutUs: 'About Us',
     production: 'Production',
@@ -86,7 +86,7 @@ const en = {
     production: 'Production',
   },
   media: {
-    heading: 'MEDIA CENTER',
+    heading: 'PRODUCT GALLERY',
     pdfDocument: 'PDF Document',
   },
   catalog: {
