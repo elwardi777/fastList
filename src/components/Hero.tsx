@@ -68,14 +68,14 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:bg-[length:100%_auto] lg:bg-top hero-bg-desktop"
         style={{
-          backgroundImage: "url('/images/manufacturing-blueprint-mobile.png')",
+          backgroundImage: "url('/images/ChatGPT Image 22 mai 2026, 23_23_26.png')",
           backgroundRepeat: 'no-repeat',
         }}
       >
         <style>{`
           @media (min-width: 1024px) {
             .hero-bg-desktop {
-              background-image: url('/images/Gemini_Generated_Image_n5y1hrn5y1hrnvggg5y1.png') !important;
+              background-image: url('/images/Gemini_Generated_Image_bkv7n3bkv7n3bkv7.png') !important;
             }
           }
         `}</style>
