@@ -34,6 +34,16 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
   const [lightPos, setLightPos] = React.useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = React.useState(false);
   const [direction, setDirection] = React.useState(0); // -1 left, 1 right
+  const [isDesktop, setIsDesktop] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const media = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, []);
 
   // ---- Refs ----
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -174,21 +184,25 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
   );
 
   // ---- Image transition variants ----
+  const isLargeImage = isDesktop && currentIndex > 0;
+  const targetScale = isLargeImage ? 1.28 : 1.0;
+  const enterExitScale = targetScale * 0.92;
+
   const imageVariants = {
     enter: (dir: number) => ({
       opacity: 0,
-      scale: 0.92,
+      scale: enterExitScale,
       rotateY: dir * 30,
     }),
     center: {
       opacity: 1,
-      scale: 1,
+      scale: targetScale,
       rotateY: 0,
       transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
     },
     exit: (dir: number) => ({
       opacity: 0,
-      scale: 0.92,
+      scale: enterExitScale,
       rotateY: dir * -30,
       transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
     }),
@@ -212,7 +226,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
     >
       {/* --- Product image --- */}
       <div
-        className="relative w-full max-w-full overflow-hidden flex items-center justify-center px-1"
+        className="relative w-full max-w-full flex items-center justify-center px-1"
         style={{
           perspective: '1000px',
           minHeight: '280px',
@@ -241,7 +255,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[460px] lg:max-h-[500px] w-full max-w-[min(100%,320px)] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] object-contain float-shadow pointer-events-none mx-auto"
+                className="h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[460px] lg:max-h-[500px] w-full max-w-[min(100%,320px)] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] object-contain pointer-events-none mx-auto"
                 draggable={false}
               />
             </AnimatePresence>
