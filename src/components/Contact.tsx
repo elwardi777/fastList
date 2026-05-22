@@ -49,8 +49,17 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    
+    const messageText = `Hello, my name is ${formData.name}.\nEmail: ${formData.email}\nMessage: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/212653660399?text=${encodeURIComponent(messageText)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: '', email: '', message: '' });
+    }, 3000);
   };
 
   return (
@@ -149,7 +158,7 @@ const Contact: React.FC = () => {
           >
             <div className="rounded-xl overflow-hidden h-full min-h-[400px] relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977478953!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8471131920807!2d-7.619077224213768!3d33.57037747334057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b9%3A0x550c1477c680cfd2!2sCasablanca!5e0!3m2!1sen!2sma!4v1716300000000!5m2!1sen!2sma"
                 className="w-full h-full absolute inset-0 border-0"
                 allowFullScreen
                 loading="lazy"

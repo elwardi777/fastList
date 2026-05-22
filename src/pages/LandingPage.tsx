@@ -5,7 +5,6 @@ import PrecisionManufacturingSection from '../components/PrecisionManufacturingS
 import StatsCounter from '../components/StatsCounter'
 import Production from '../components/Production'
 import Media from '../components/Media'
-import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 import FloatingToolbar from '../components/FloatingToolbar'
@@ -49,7 +48,7 @@ export default function LandingPage() {
         </section>
 
         <section id="contact">
-          <Contact />
+       
         </section>
       </main>
 

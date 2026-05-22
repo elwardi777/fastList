@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
 /* =============================================
@@ -17,6 +17,7 @@
   --color-gold: #D4A843;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
   --shadow-architectural: 0 8px 0 rgba(0, 0, 0, 0.18);
@@ -371,4 +372,72 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Futuristic Industrial UI Additions                                 */
+/* ------------------------------------------------------------------ */
+
+.glass-card-futuristic {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 61, 120, 0.08);
+  box-shadow: 0 10px 40px -10px rgba(11, 61, 120, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-futuristic:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(11, 61, 120, 0.25);
+  box-shadow: 0 20px 50px -10px rgba(11, 61, 120, 0.15);
+  transform: translateY(-4px);
+}
+
+.glass-card-dark-futuristic {
+  background: rgba(11, 61, 120, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 61, 120, 0.12);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-dark-futuristic:hover {
+  background: rgba(11, 61, 120, 0.06);
+  border-color: rgba(11, 61, 120, 0.3);
+  box-shadow: 0 20px 50px -10px rgba(11, 61, 120, 0.25);
+  transform: translateY(-4px);
+}
+
+.futuristic-grid {
+  background-image: 
+    linear-gradient(rgba(11, 61, 120, 0.03) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(11, 61, 120, 0.03) 1.5px, transparent 1.5px);
+  background-size: 50px 50px;
+}
+
+.glow-border-input {
+  border: 1px solid rgba(11, 61, 120, 0.1);
+  box-shadow: 0 0 15px rgba(11, 61, 120, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-border-input:focus {
+  border-color: rgba(11, 61, 120, 0.4);
+  box-shadow: 0 0 25px rgba(11, 61, 120, 0.12), inset 0 0 8px rgba(11, 61, 120, 0.03);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 12px rgba(11, 61, 120, 0.2);
+}
+
+.neon-dot-blue {
+  box-shadow: 0 0 12px #0B3D78, 0 0 4px #0B3D78;
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+.animate-grid-slow {
+  animation: grid-drift 40s linear infinite;
 }

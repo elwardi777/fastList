@@ -7,10 +7,10 @@ const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   const QUICK_LINKS_T = [
-    { label: t('footer.products'), href: '#products' },
-    { label: t('footer.about'), href: '#about' },
-    { label: t('footer.production'), href: '#production' },
-    { label: t('nav.contact'), href: '#contact' },
+    { label: t('footer.products'), href: '/#products' },
+    { label: t('footer.about'), href: '/about' },
+    { label: t('footer.production'), href: '/#production' },
+    { label: t('nav.contact'), href: '/corporate/contact' },
   ];
 
   return (
