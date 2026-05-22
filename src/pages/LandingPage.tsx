@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import ProductGroups from '../components/ProductGroups'
-import About from '../components/About'
 import PrecisionManufacturingSection from '../components/PrecisionManufacturingSection'
 import Production from '../components/Production'
 import Media from '../components/Media'
@@ -32,10 +31,6 @@ export default function LandingPage() {
 
         <section id="precision">
           <PrecisionManufacturingSection />
-        </section>
-
-        <section id="about">
-          <About />
         </section>
 
         <section id="production">

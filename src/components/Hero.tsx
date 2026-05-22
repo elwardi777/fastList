@@ -63,9 +63,10 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen w-full overflow-hidden flex items-center"
-      style={{ backgroundImage: 'url(/images/Gemini_Generated_Image_n5y1hrn5y1hrnvggg5y1.png)', backgroundSize: '100% auto', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat', backgroundColor: '#edf2f8' }}
+      className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#edf2f8]"
     >
+      <div className="absolute inset-0 bg-[url('/images/Gemini_Generated_Image_n5y1hrn5y1hrnvggg5y1.png')] bg-cover bg-center bg-no-repeat lg:bg-[length:100%_auto] lg:bg-top" />
+
       {/* =========================================================
           CONTENT WRAPPER
           ========================================================= */}

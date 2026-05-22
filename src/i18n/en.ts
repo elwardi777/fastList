@@ -25,7 +25,7 @@ const en = {
   about: {
     title: 'ENGINEERED FOR CRITICAL INFRASTRUCTURE',
     subtitle: 'Two decades of precision manufacturing',
-    body: 'For over two decades, FasLift Solutions has been at the forefront of elevator safety manufacturing. Our speed governors, safety gears, and braking systems are engineered to protect millions of passengers daily across five continents. Every component that leaves our production facility undergoes rigorous testing protocols that exceed international EN 81 standards — because in vertical transportation, there is no margin for compromise.',
+    body: '',
     years: 'Years',
     products: 'Products',
     countries: 'Countries',
@@ -34,7 +34,7 @@ const en = {
   precision: {
     subtitle: 'Trusted Worldwide',
     heading: 'Two decades of\nprecision manufacturing',
-    body: 'For over two decades, FasLift Solutions has been at the forefront of elevator safety manufacturing. Our speed governors, safety gears, and braking systems are engineered to protect millions of passengers daily across five continents. Every component undergoes rigorous testing that exceeds EN 81 standards — because in vertical transportation, there is no margin for compromise.',
+    body: '',
   },
   contact: {
     heading: 'GET IN TOUCH',

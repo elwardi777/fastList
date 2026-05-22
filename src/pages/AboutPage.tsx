@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollToTop from '../components/ScrollToTop';
 import FloatingToolbar from '../components/FloatingToolbar';
+import About from '../components/About';
 
 /* ─── Timeline data ─────────────────────────────────── */
 const TIMELINE = [
@@ -32,14 +33,6 @@ const VALUES = [
   { icon: <Star size={28} />, title: 'Industrial Quality', desc: 'Premium grade materials and rigorous QC.' },
 ];
 
-/* ─── Stats ─────────────────────────────────────────── */
-const STATS = [
-  { value: '20+', label: 'Years Experience' },
-  { value: '10+', label: 'Countries Served' },
-  { value: '5000+', label: 'Components Delivered' },
-  { value: '99.9%', label: 'Safety Precision' },
-];
-
 /* ══════════════════════════════════════════════════════
    ABOUT PAGE
 ══════════════════════════════════════════════════════ */
@@ -49,57 +42,65 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F5F7FA] pt-20">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-[#111C5A]/5 blur-3xl" />
-          <div className="absolute bottom-0 -left-24 w-[400px] h-[400px] rounded-full bg-[#1565C0]/8 blur-3xl" />
-          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+      <section className="relative flex min-h-[100svh] items-start overflow-hidden bg-white pt-24 pb-16 lg:min-h-screen lg:items-center lg:pt-20 lg:pb-0">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/images/Gemini_Generated_Image_ibchg1ibchg1ibch.png"
+            alt="FasLift Engineering Background"
+            className="h-full w-full object-cover object-[62%_center] opacity-85 sm:object-right md:object-center lg:object-cover lg:object-center lg:opacity-90"
+          />
+          {/* Subtle grid pattern overlay */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
             <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#111C5A" strokeWidth="1"/></pattern></defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
+          {/* Left-to-right gradient overlay to guarantee text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/96 to-white/62 sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-white/10 md:from-white md:via-white/90 md:to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent sm:hidden" />
+          {/* Bottom fade for smooth transition to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F7FA] to-transparent pointer-events-none" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full py-20">
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 lg:px-12 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="max-w-[620px] lg:max-w-none">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-                className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#111C5A]/15 bg-white/70 backdrop-blur-sm">
+                className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#111C5A]/15 bg-white/75 px-4 py-2 backdrop-blur-sm lg:mb-6 lg:bg-white/70">
                 <span className="w-2 h-2 rounded-full bg-[#1565C0] animate-pulse" />
-                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#111C5A]/60 font-['JetBrains_Mono',monospace]">About FasLift</span>
+                <span className="font-['JetBrains_Mono',monospace] text-[10px] font-semibold uppercase tracking-[0.18em] text-[#111C5A]/60 lg:text-[11px] lg:tracking-[0.2em]">About FasLift</span>
               </motion.div>
               <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-['Poppins',sans-serif] font-black text-[#0D1540] leading-[1.0] tracking-[-0.03em] mb-6"
-                style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
+                className="mb-5 font-['Poppins',sans-serif] font-black leading-[1.0] text-[#0D1540] lg:mb-6 lg:tracking-[-0.03em]"
+                style={{ fontSize: 'clamp(2.45rem, 13vw, 3rem)' }}>
+                <span className="hidden lg:inline" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
+                  ABOUT<br /><span className="text-[#1565C0]">FASLIFT</span>
+                </span>
+                <span className="lg:hidden">
                 ABOUT<br /><span className="text-[#1565C0]">FASLIFT</span>
+                </span>
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
-                className="text-lg text-[#0D1540]/60 mb-4 leading-relaxed max-w-lg">
-                Engineering next-generation elevator safety systems.
-              </motion.p>
+                className="mb-4 max-w-lg text-base leading-relaxed text-[#0D1540]/68 lg:text-lg lg:text-[#0D1540]/60">
+Engineering advanced Speed Governor solutions for safer transportation.              </motion.p>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}
-                className="text-base text-[#0D1540]/50 mb-10 leading-relaxed max-w-md">
-                FasLift Solutions develops precision elevator safety technologies including speed governors, braking systems, and industrial lift components for modern infrastructure.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="flex flex-wrap gap-4">
-                <a href="#timeline" className="inline-flex items-center gap-2 bg-[#111C5A] text-white px-8 py-4 rounded-xl font-semibold text-sm hover:bg-[#1565C0] transition-colors duration-300">
+                className="mb-8 max-w-md text-sm leading-7 text-[#0D1540]/58 lg:mb-10 lg:text-base lg:leading-relaxed lg:text-[#0D1540]/50">
+FAS LIST specializes in the development and supply of high-performance Speed Governor systems designed to enhance vehicle safety, control, and operational reliability. We provide smart speed limiting technologies and safety solutions for commercial vehicles, transport fleets, and industrial applications.              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4">
+                <a href="#timeline" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#111C5A] px-6 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#1565C0] lg:w-auto lg:px-8">
                   Explore History <ArrowRight size={16} />
                 </a>
-                <Link to="/#contact" className="inline-flex items-center gap-2 border border-[#111C5A]/20 text-[#111C5A] px-8 py-4 rounded-xl font-semibold text-sm hover:border-[#1565C0] hover:text-[#1565C0] transition-colors duration-300">
+                <Link to="/#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#111C5A]/20 bg-white/50 px-6 py-4 text-sm font-semibold text-[#111C5A] backdrop-blur-sm transition-colors duration-300 hover:border-[#1565C0] hover:text-[#1565C0] lg:w-auto lg:bg-transparent lg:px-8 lg:backdrop-blur-none">
                   Contact Us
                 </Link>
               </motion.div>
             </div>
-            <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3 }} className="relative flex items-center justify-center min-h-[500px]">
-              <div className="absolute w-[420px] h-[420px] rounded-full border border-[#111C5A]/8" />
-              <div className="absolute w-[320px] h-[320px] rounded-full border border-[#1565C0]/10" />
-              <div className="absolute w-[220px] h-[220px] rounded-full bg-[#1565C0]/5" />
-              <motion.img src="/images/elevator-hero.png" alt="FasLift Glass Elevator"
-                className="relative z-10 w-full max-w-[380px] h-auto"
-                style={{ filter: 'drop-shadow(0 24px 48px rgba(17,28,90,0.3))' }}
-                animate={{ y: [0, -14, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
-            </motion.div>
+
+            {/* ── RIGHT: Floating Glassmorphism Badge/Card ── */}
+          
           </div>
         </div>
-        <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+        <motion.div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
           <span className="text-[10px] tracking-[0.2em] uppercase text-[#111C5A]/30 font-['JetBrains_Mono',monospace]">Scroll</span>
           <div className="w-[1px] h-8 bg-gradient-to-b from-[#111C5A]/30 to-transparent" />
         </motion.div>
@@ -547,85 +548,7 @@ function MobileTimelineCard({ item, cardReady }: { item: { year: string; title: 
    INTRO SECTION
 ══════════════════════════════════════════════════════ */
 function IntroSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-
-  return (
-    <section ref={ref} className="py-24 md:py-32 bg-[#F5F7FA] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* LEFT — image */}
-          <motion.div className="relative overflow-hidden rounded-2xl shadow-2xl" style={{ y: imgY }}>
-            <img
-              src="/images/manufacturing.png"
-              alt="FasLift Manufacturing"
-              className="w-full h-[500px] object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111C5A]/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="font-['JetBrains_Mono',monospace] text-[10px] tracking-[0.2em] uppercase text-white/60">
-                Precision Manufacturing
-              </span>
-            </div>
-          </motion.div>
-
-          {/* RIGHT — text */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <div className="w-8 h-[2px] bg-[#1565C0]" />
-              <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">
-                Who We Are
-              </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-['Poppins',sans-serif] font-black text-[#0D1540] leading-tight mb-6"
-              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
-            >
-              Precision Manufacturing<br />
-              <span className="text-[#1565C0]">for Elevator Safety</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[#0D1540]/60 text-base leading-relaxed mb-10"
-            >
-              For years, FasLift Solutions has specialized in advanced elevator safety engineering, delivering high-quality overspeed governors and lift safety technologies for international projects.
-            </motion.p>
-
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-5">
-              {STATS.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="bg-white rounded-xl p-5 shadow-sm border border-[#111C5A]/5 hover:shadow-md hover:border-[#1565C0]/20 transition-all duration-300"
-                >
-                  <div className="font-['Poppins',sans-serif] font-black text-3xl text-[#1565C0] mb-1">{stat.value}</div>
-                  <div className="text-[12px] font-semibold text-[#0D1540]/50 uppercase tracking-wider">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <About />;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -683,4 +606,3 @@ function ValuesSection() {
     </section>
   );
 }
-
