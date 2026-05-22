@@ -11,8 +11,6 @@ const fr = {
     newsExhibitions: 'Actualités & Salons',
     speedGovernors: 'Limiteurs de Vitesse',
     safetyGears: 'Parachutes de Sécurité',
-    ropeBrakes: 'Freins à Câble',
-    bufferSystems: 'Systèmes Tampons',
   },
   hero: {
     line1: 'LE FABRICANT',
@@ -35,6 +33,25 @@ const fr = {
     subtitle: 'Fiable dans le Monde Entier',
     heading: 'Deux décennies de\nfabrication de précision',
     body: "Depuis plus de deux décennies, FasLift Solutions est à la pointe de la fabrication de systèmes de sécurité pour ascenseurs. Nos limiteurs de vitesse, parachutes et systèmes de freinage sont conçus pour protéger des millions de passagers chaque jour sur cinq continents. Chaque composant est soumis à des tests rigoureux dépassant les normes EN 81 — car dans le transport vertical, il n'y a pas de place pour le compromis.",
+  },
+  trusted: {
+    badge: 'Depuis 1973',
+    heading:
+      'Les raisons pour lesquelles FAS LIST est une entreprise de référence et pionnière dans son secteur depuis 1973',
+    subtitle:
+      'Cinq décennies de rigueur technique, de systèmes de sécurité certifiés et d\'innovation continue ont fait de FAS LIST une marque de référence pour les limiteurs de vitesse d\'ascenseur.',
+    card1Title: 'Qualité Éprouvée',
+    card1Subtitle:
+      'Performances de sécurité certifiées et standards de fabrication qui définissent la référence en limiteurs de vitesse.',
+    card2Title: 'Excellence Technique',
+    card2Subtitle:
+      'Conception mécanique de précision, protocoles de tests rigoureux et équipes d\'ingénieurs experts.',
+    card3Title: 'Innovation Continue',
+    card3Subtitle:
+      'R&D avancée et technologies intelligentes adaptées aux exigences du transport vertical moderne.',
+    card4Title: 'Pièces & Support',
+    card4Subtitle:
+      'Approvisionnement fiable en pièces détachées, assistance technique et partenariat durable.',
   },
   contact: {
     heading: 'CONTACTEZ-NOUS',
@@ -74,12 +91,9 @@ const fr = {
   },
   products: {
     heading: 'GAMMES DE PRODUITS',
-    subtitle: 'Systèmes de sécurité de précision',
     productsLabel: 'Produits',
     speedGovernors: 'Limiteurs de Vitesse',
     safetyGears: 'Parachutes de Sécurité',
-    ropeBrakes: 'Freins à Câble',
-    bufferSystems: 'Systèmes Tampons',
   },
   production: {
     heading: 'PROCESSUS DE PRODUCTION',

@@ -11,6 +11,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollToTop from '../components/ScrollToTop';
 import FloatingToolbar from '../components/FloatingToolbar';
 import About from '../components/About';
+import TrustedStandardSection from '../components/TrustedStandardSection';
 
 /* ─── Timeline data ─────────────────────────────────── */
 const TIMELINE = [
@@ -108,6 +109,8 @@ FAS LIST specializes in the development and supply of high-performance Speed Gov
 
       {/* ── INTRO / STATS ── */}
       <IntroSection />
+
+      <TrustedStandardSection />
 
       {/* ── HISTORY TIMELINE ── */}
       <TimelineSection />

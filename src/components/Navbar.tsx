@@ -41,8 +41,6 @@ function useNavGroups(): NavGroup[] {
       links: [
         { label: t('nav.speedGovernors'), href: '/products/speed-governors' },
         { label: t('nav.safetyGears'), href: '/products/safety-gears' },
-        { label: t('nav.ropeBrakes'), href: '/products/rope-brakes' },
-        { label: t('nav.bufferSystems'), href: '/products/buffer-systems' },
       ],
     },
   ]

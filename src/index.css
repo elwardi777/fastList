@@ -217,6 +217,26 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .product-groups-blueprint {
+    background-image:
+      linear-gradient(rgba(11, 59, 130, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 59, 130, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .product-groups-waves {
+    background-image:
+      radial-gradient(ellipse 90% 55% at 12% 18%, rgba(29, 79, 163, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 88% 72%, rgba(11, 59, 130, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(221, 227, 236, 0.4) 0%, transparent 60%);
+  }
+}
+
+@keyframes product-shine-sweep {
+  0% { transform: translateX(-120%) skewX(-14deg); opacity: 0; }
+  15% { opacity: 0.45; }
+  100% { transform: translateX(220%) skewX(-14deg); opacity: 0; }
 }
 
 /* =============================================

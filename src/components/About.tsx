@@ -1,18 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2, Eye, Factory, ShieldCheck } from 'lucide-react';
-
+import { Eye, Factory } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
-
-const features = [
-  'Advanced overspeed governor technology',
-  'Precision manufacturing standards',
-  'Reliable safety performance',
-  'Engineered for international projects',
-  'High-quality materials and durability',
-  'Commitment to innovation and safety excellence',
-];
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -107,28 +97,7 @@ With a strong focus on safety, quality, and customer satisfaction, FAS LIST cont
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="about-reveal border-l-2 border-[#1F8BFF] bg-white/70 p-7 shadow-[0_16px_50px_rgba(11,61,120,0.08)] backdrop-blur-sm">
-            <div className="mb-6 flex items-center gap-3">
-              <ShieldCheck className="h-5 w-5 text-[#1F8BFF]" />
-              <h3 className="text-sm font-black uppercase tracking-[0.18em] text-[#071D3A]">
-                Why Choose FasLift
-              </h3>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {features.map((feature) => (
-                <div
-                  key={feature}
-                  className="group flex items-start gap-3 border border-[#0B3D78]/8 bg-white px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#1F8BFF]/35 hover:shadow-[0_14px_34px_rgba(31,139,255,0.14)]"
-                >
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#1F8BFF] transition-transform duration-300 group-hover:scale-110" />
-                  <span className="text-sm font-semibold leading-6 text-[#17345B]/80">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
+        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:max-w-4xl lg:mx-auto">
             <div className="about-reveal bg-[#071D3A] p-7 text-white shadow-[0_22px_60px_rgba(7,29,58,0.18)]">
               <Eye className="mb-5 h-7 w-7 text-[#7BC3FF]" />
               <h3 className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-white">Our Vision</h3>
@@ -143,7 +112,6 @@ With a strong focus on safety, quality, and customer satisfaction, FAS LIST cont
                 To manufacture world-class elevator safety systems that protect lives, improve performance, and support the future of modern vertical transportation.
               </p>
             </div>
-          </div>
         </div>
       </div>
     </section>

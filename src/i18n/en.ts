@@ -11,8 +11,6 @@ const en = {
     newsExhibitions: 'News & Exhibitions',
     speedGovernors: 'Speed Governors',
     safetyGears: 'Safety Gears',
-    ropeBrakes: 'Rope Brakes',
-    bufferSystems: 'Buffer Systems',
   },
   hero: {
     line1: 'THE TRUSTED',
@@ -35,6 +33,25 @@ const en = {
     subtitle: 'Trusted Worldwide',
     heading: 'Two decades of\nprecision manufacturing',
     body: '',
+  },
+  trusted: {
+    badge: 'FAS LIST Speed Governors',
+    heading:
+      'The reasons why FAS LIST has been a preferred and standard-setting company in its sector are as follows:',
+    subtitle:
+      '',
+    card1Title: 'Reliable Speed Governors',
+    card1Subtitle:
+      'standards that set the benchmark in overspeed governor technology.',
+    card2Title: 'Precision Engineering',
+    card2Subtitle:
+      ' Our speed governors are manufactured with advanced mechanical design and strict quality control to ensure durability, stability, and reliable performance.',
+    card3Title: 'Innovative Technology',
+    card3Subtitle:
+      'We offer modern speed governor solutions developed to meet the evolving demands of today’s vertical transportation systems.',
+    card4Title: 'Technical Support',
+    card4Subtitle:
+      'We ensure efficient spare parts availability and professional technical assistance for long-term reliability and customer satisfaction.',
   },
   contact: {
     heading: 'GET IN TOUCH',
@@ -74,12 +91,9 @@ const en = {
   },
   products: {
     heading: 'PRODUCT GROUPS',
-    subtitle: 'Precision-engineered safety systems',
     productsLabel: 'Products',
     speedGovernors: 'Speed Governors',
     safetyGears: 'Safety Gears',
-    ropeBrakes: 'Rope Brakes',
-    bufferSystems: 'Buffer Systems',
   },
   production: {
     heading: 'PRODUCTION PROCESS',

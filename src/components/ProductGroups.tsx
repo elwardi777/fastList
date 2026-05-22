@@ -45,7 +45,7 @@ function ProductCard({
         {/* Content */}
         <div className="relative z-10 flex items-end justify-between h-full p-6 md:p-8 min-h-[160px] md:min-h-[200px]">
           <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] md:text-[32px] font-bold text-white leading-tight">
+            <h3 className="text-[22px] md:text-[24px] lg:text-[30px] font-bold text-white leading-tight">
               {group.title}
             </h3>
             <span className="inline-flex items-center self-start rounded-full bg-white/15 backdrop-blur-sm px-3 py-1 text-[12px] font-medium text-white/90 tracking-wide">
@@ -82,8 +82,6 @@ export default function ProductGroups() {
   const productGroups: ProductGroup[] = [
     { title: t('products.speedGovernors'), count: 8, image: '/images/category-governors.png' },
     { title: t('products.safetyGears'), count: 12, image: '/images/category-safety-gears.png' },
-    { title: t('products.ropeBrakes'), count: 6, image: '/images/category-rope-brakes.png' },
-    { title: t('products.bufferSystems'), count: 10, image: '/images/category-buffers.png' },
   ];
 
   return (
@@ -91,11 +89,10 @@ export default function ProductGroups() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           title={t('products.heading')}
-          subtitle={t('products.subtitle')}
           className="mb-12 md:mb-16"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {productGroups.map((group, index) => (
             <ProductCard key={group.title} group={group} index={index} productsLabel={t('products.productsLabel')} />
           ))}
