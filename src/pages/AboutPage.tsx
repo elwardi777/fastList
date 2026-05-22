@@ -75,10 +75,10 @@ export default function AboutPage() {
                 className="mb-5 font-['Poppins',sans-serif] font-black leading-[1.0] text-[#0D1540] lg:mb-6 lg:tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.45rem, 13vw, 3rem)' }}>
                 <span className="hidden lg:inline" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
-                  ABOUT<br /><span className="text-[#1565C0]">FASLIFT</span>
+                  ABOUT<br /><span className="text-[#0B3D78]">FASLIFT</span>
                 </span>
                 <span className="lg:hidden">
-                ABOUT<br /><span className="text-[#1565C0]">FASLIFT</span>
+                ABOUT<br /><span className="text-[#0B3D78]">FASLIFT</span>
                 </span>
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}

@@ -8,8 +8,8 @@
 
 @theme {
   --color-navy: #0B3D78;
-  --color-navy-dark: #082d5a;
-  --color-navy-light: #2A3FA0;
+  --color-navy-dark: #0B3D78;
+  --color-navy-light: #0B3D78;
   --color-arctic: #F5F7FA;
   --color-steel: #8B95A5;
   --color-steel-dark: #4A5568;
@@ -67,7 +67,7 @@
   }
 
   ::selection {
-    background: rgba(30, 45, 140, 0.4);
+    background: rgba(11, 61, 120, 0.4);
     color: #FFFFFF;
   }
 
@@ -77,7 +77,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #082d5a;
+    background: #0B3D78;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -161,14 +161,14 @@
   }
 
   .rule-line-dark {
-    border-bottom: 0.5px solid rgba(30, 45, 140, 0.06);
+    border-bottom: 0.5px solid rgba(11, 61, 120, 0.06);
   }
 
   /* Isometric grid background */
   .iso-grid {
     background-image:
-      linear-gradient(rgba(30, 45, 140, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30, 45, 140, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(11, 61, 120, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 61, 120, 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
@@ -200,7 +200,7 @@
 
   /* Navy glass for navbar */
   .navy-glass {
-    background: rgba(30, 45, 140, 0.85);
+    background: rgba(11, 61, 120, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -220,15 +220,15 @@
 
   .product-groups-blueprint {
     background-image:
-      linear-gradient(rgba(11, 59, 130, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(11, 59, 130, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(11, 61, 120, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11, 61, 120, 0.04) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
   .product-groups-waves {
     background-image:
-      radial-gradient(ellipse 90% 55% at 12% 18%, rgba(29, 79, 163, 0.12) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 50% at 88% 72%, rgba(11, 59, 130, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 90% 55% at 12% 18%, rgba(11, 61, 120, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 88% 72%, rgba(11, 61, 120, 0.08) 0%, transparent 50%),
       radial-gradient(ellipse 50% 40% at 50% 100%, rgba(221, 227, 236, 0.4) 0%, transparent 60%);
   }
 }
@@ -245,7 +245,7 @@
 
 /* Navbar transition states */
 .navbar-scrolled {
-  background: rgba(30, 45, 140, 0.85) !important;
+  background: rgba(11, 61, 120, 0.85) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   height: 56px !important;
@@ -338,7 +338,7 @@
   position: fixed;
   inset: 0;
   z-index: 9998;
-  background: rgba(20, 30, 92, 0.98);
+  background: rgba(11, 61, 120, 0.98);
   backdrop-filter: blur(20px);
 }
 

@@ -211,7 +211,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
       transition={{ type: 'tween', duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-      className="fixed inset-0 z-[1001] flex flex-col bg-[#1E2D8C]/95 backdrop-blur-[20px]"
+      className="fixed inset-0 z-[1001] flex flex-col bg-[#0B3D78]/95 backdrop-blur-[20px]"
     >
       {/* Header row */}
       <div className="flex h-[72px] items-center justify-between px-6">

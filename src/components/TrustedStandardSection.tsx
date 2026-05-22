@@ -35,15 +35,15 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
       className="group h-full"
     >
       <div
-        className="relative flex h-full min-h-[360px] flex-col overflow-hidden rounded-[30px] border border-[#1D4FA3]/20 bg-white/60 backdrop-blur-xl transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-2 hover:border-[#1D4FA3]/45"
+        className="relative flex h-full min-h-[360px] flex-col overflow-hidden rounded-[30px] border border-[#0B3D78]/20 bg-white/60 backdrop-blur-xl transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-2 hover:border-[#0B3D78]/45"
         style={{
           boxShadow:
-            '0 0 0 1px rgba(255,255,255,0.8), 0 24px 56px rgba(16,43,92,0.1), 0 8px 20px rgba(11,59,130,0.06)',
+            '0 0 0 1px rgba(255,255,255,0.8), 0 24px 56px rgba(11,61,120,0.1), 0 8px 20px rgba(11,61,120,0.06)',
         }}
       >
         <div
           className="pointer-events-none absolute inset-0 rounded-[30px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-          style={{ boxShadow: 'inset 0 0 0 1px rgba(29,79,163,0.35), 0 0 36px rgba(29,79,163,0.12)' }}
+          style={{ boxShadow: 'inset 0 0 0 1px rgba(11,61,120,0.35), 0 0 36px rgba(11,61,120,0.12)' }}
           aria-hidden
         />
 
@@ -67,13 +67,13 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
 
           <div className="relative z-10 flex h-full items-center justify-center">
             <div
-              className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#DDE3EC] bg-white/85 backdrop-blur-md transition-all duration-500 group-hover:border-[#1D4FA3]/35 group-hover:shadow-[0_0_28px_rgba(29,79,163,0.2)]"
-              style={{ boxShadow: '0 12px 32px rgba(16,43,92,0.08)' }}
+              className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#DDE3EC] bg-white/85 backdrop-blur-md transition-all duration-500 group-hover:border-[#0B3D78]/35 group-hover:shadow-[0_0_28px_rgba(11,61,120,0.2)]"
+              style={{ boxShadow: '0 12px 32px rgba(11,61,120,0.08)' }}
             >
               <Icon
                 size={28}
                 strokeWidth={1.5}
-                className="text-[#0B3B82] transition-colors duration-400 group-hover:text-[#1D4FA3]"
+                className="text-[#0B3D78] transition-colors duration-400 group-hover:text-[#0B3D78]"
               />
             </div>
           </div>
@@ -91,14 +91,14 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
 
         {/* Content */}
         <div className="relative flex flex-1 flex-col px-6 pb-7 pt-2 sm:px-7 sm:pb-8">
-          <h3 className="text-base sm:text-lg font-extrabold uppercase tracking-tight text-[#102B5C] leading-snug">
+          <h3 className="text-base sm:text-lg font-extrabold uppercase tracking-tight text-[#0B3D78] leading-snug">
             {card.title}
           </h3>
           <p className="mt-3 flex-1 text-[13px] sm:text-sm leading-relaxed text-[#6E788D]">
             {card.subtitle}
           </p>
 
-          <div className="mt-6 h-[3px] w-12 rounded-full bg-gradient-to-r from-[#0B3B82] to-[#1D4FA3] transition-all duration-500 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(29,79,163,0.45)]" />
+          <div className="mt-6 h-[3px] w-12 rounded-full bg-gradient-to-r from-[#0B3D78] to-[#0B3D78] transition-all duration-500 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(11,61,120,0.45)]" />
         </div>
       </div>
     </motion.article>
@@ -144,7 +144,7 @@ export default function TrustedStandardSection() {
       <div className="pointer-events-none absolute inset-0 product-groups-blueprint opacity-60" aria-hidden />
       <div
         className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full blur-3xl opacity-50"
-        style={{ background: 'radial-gradient(ellipse, rgba(29,79,163,0.12) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse, rgba(11,61,120,0.12) 0%, transparent 70%)' }}
         aria-hidden
       />
 
@@ -156,10 +156,10 @@ export default function TrustedStandardSection() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#DDE3EC] bg-white/70 px-4 py-1.5 font-['JetBrains_Mono',monospace] text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0B3B82]/80 backdrop-blur-sm">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#DDE3EC] bg-white/70 px-4 py-1.5 font-['JetBrains_Mono',monospace] text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0B3D78]/80 backdrop-blur-sm">
             {t('trusted.badge')}
           </span>
-          <h2 className="font-['Inter',sans-serif] text-[clamp(1.35rem,3.2vw,2.35rem)] font-extrabold leading-[1.2] tracking-tight text-[#102B5C]">
+          <h2 className="font-['Inter',sans-serif] text-[clamp(1.35rem,3.2vw,2.35rem)] font-extrabold leading-[1.2] tracking-tight text-[#0B3D78]">
             {t('trusted.heading')}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-[15px] sm:text-base leading-relaxed text-[#6E788D]">

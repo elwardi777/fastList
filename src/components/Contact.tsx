@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
               {/* Submit */}
               <motion.button
                 type="submit"
-                className="bg-[#0B3D78] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#0a3368] transition-colors duration-200 cursor-pointer"
+                className="bg-[#0B3D78] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#0B3D78]/90 transition-colors duration-200 cursor-pointer"
                 whileTap={{ scale: 0.97 }}
               >
                 {submitted ? t('contact.sent') : t('contact.send')}

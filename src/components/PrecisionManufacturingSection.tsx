@@ -1,4 +1,4 @@
-﻿import React, { useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +25,7 @@ const PrecisionManufacturingSection: React.FC = () => {
       <div className="absolute top-0 left-0 right-0 h-[2px] overflow-hidden z-10">
         <motion.div
           className="h-full w-full"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, #0B3D78 30%, #4a9eff 50%, #0B3D78 70%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(90deg, transparent 0%, #0B3D78 30%, #0B3D78 50%, #0B3D78 70%, transparent 100%)' }}
           animate={{ x: ['-100%', '100%'] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
         />
@@ -100,7 +100,7 @@ const PrecisionManufacturingSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 right-0 h-[2px] overflow-hidden z-10">
         <motion.div
           className="h-full w-full"
-          style={{ background: 'linear-gradient(90deg, transparent 0%, #0B3D78 30%, #4a9eff 50%, #0B3D78 70%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(90deg, transparent 0%, #0B3D78 30%, #0B3D78 50%, #0B3D78 70%, transparent 100%)' }}
           animate={{ x: ['100%', '-100%'] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
         />

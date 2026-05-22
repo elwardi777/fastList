@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import ProductGroups from '../components/ProductGroups'
 import TrustedStandardSection from '../components/TrustedStandardSection'
 import PrecisionManufacturingSection from '../components/PrecisionManufacturingSection'
 import Production from '../components/Production'
