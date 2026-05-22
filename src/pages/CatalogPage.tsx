@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Download, ExternalLink } from 'lucide-react';
@@ -7,17 +7,33 @@ import { CATALOG_PDF_URL, CATALOG_PDF_FILENAME } from '../constants/catalog';
 export default function CatalogPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect mobile device (iOS, Android, Windows Phone, etc.)
-    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
+    const checkMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
-    if (isMobile) {
-      // Replaces the route with the direct PDF URL so user gets the browser's native PDF viewer
-      window.location.replace(CATALOG_PDF_URL);
-    }
+    setIsMobile(checkMobile);
   }, []);
+
+  const triggerMobileDownload = async () => {
+    try {
+      const response = await fetch(CATALOG_PDF_URL);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = CATALOG_PDF_FILENAME;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Failed to download catalog", error);
+      // Fallback: open in new window/tab if blob fetch fails
+      window.open(CATALOG_PDF_URL, '_blank');
+    }
+  };
 
   return (
     <div className="flex flex-col h-screen bg-[#1E2530] text-white overflow-hidden font-sans">
@@ -57,7 +73,13 @@ export default function CatalogPage() {
           <a
             href={CATALOG_PDF_URL}
             download={CATALOG_PDF_FILENAME}
-            className="flex items-center gap-2 bg-white text-[#0B3D78] hover:bg-white/90 text-xs font-bold px-4 py-2 rounded-lg transition-colors"
+            onClick={(e) => {
+              if (isMobile) {
+                e.preventDefault();
+                triggerMobileDownload();
+              }
+            }}
+            className="flex items-center gap-2 bg-white text-[#0B3D78] hover:bg-white/90 text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer"
           >
             <Download size={14} />
             {t('catalog.download')}
@@ -66,12 +88,44 @@ export default function CatalogPage() {
       </header>
 
       {/* Main Content Area */}
-      <div className="flex-1 relative bg-[#525659]">
-        <iframe
-          src={CATALOG_PDF_URL}
-          title={t('catalog.title')}
-          className="w-full h-full border-0"
-        />
+      <div className="flex-1 relative bg-[#525659] flex items-center justify-center p-4">
+        {isMobile ? (
+          <div className="flex flex-col items-center text-center max-w-sm w-full bg-[#1E2530]/80 p-8 rounded-3xl border border-white/10 backdrop-blur-md shadow-2xl">
+            <img
+              src="/images/catalog-cover.png"
+              alt="Catalog Cover"
+              className="w-36 h-auto rounded-xl shadow-[0_15px_30px_rgba(0,0,0,0.3)] mb-6 border border-white/5"
+            />
+            <h2 className="text-xl font-bold mb-3">{t('catalog.name')}</h2>
+            <p className="text-sm text-white/60 mb-8 leading-relaxed max-w-[280px]">
+              {t('catalog.description')}
+            </p>
+            <div className="flex flex-col gap-3 w-full">
+              <a
+                href={CATALOG_PDF_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3.5 bg-[#0B3D78] hover:bg-[#0B3D78]/90 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <ExternalLink size={14} />
+                Open PDF
+              </a>
+              <button
+                onClick={triggerMobileDownload}
+                className="w-full py-3.5 bg-white text-[#0B3D78] hover:bg-white/95 rounded-xl text-xs font-black transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Download size={14} />
+                {t('catalog.downloadText')}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <iframe
+            src={CATALOG_PDF_URL}
+            title={t('catalog.title')}
+            className="w-full h-full border-0"
+          />
+        )}
       </div>
     </div>
   );
