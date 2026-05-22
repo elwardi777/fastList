@@ -1,0 +1,686 @@
+import { useRef, useState, useEffect } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+import { ArrowRight, Shield, Zap, Settings, Award, Globe, Star } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
+import ScrollToTop from '../components/ScrollToTop';
+import FloatingToolbar from '../components/FloatingToolbar';
+
+/* ─── Timeline data ─────────────────────────────────── */
+const TIMELINE = [
+  { year: '2015', title: 'Company Founded', desc: 'FasLift Solutions was founded to create premium elevator safety technologies.' },
+  { year: '2016', title: 'First Production', desc: 'Started manufacturing precision speed governors and elevator braking systems.' },
+  { year: '2017', title: 'Expansion', desc: 'Expanded industrial production and quality testing operations.' },
+  { year: '2019', title: 'International Export', desc: 'Began exporting elevator safety components internationally.' },
+  { year: '2021', title: 'CNC Integration', desc: 'Integrated CNC manufacturing and advanced engineering systems.' },
+  { year: '2023', title: 'Smart Technology', desc: 'Developed next-generation smart overspeed governor technology.' },
+  { year: '2025', title: 'Global Brand', desc: 'FasLift Solutions becomes an international elevator safety solutions brand.' },
+];
+
+/* ─── Values data ──────────────────────────────────── */
+const VALUES = [
+  { icon: <Zap size={28} />, title: 'Innovation', desc: 'Pioneering next-gen safety engineering solutions.' },
+  { icon: <Shield size={28} />, title: 'Safety', desc: 'Zero compromise on elevator passenger protection.' },
+  { icon: <Settings size={28} />, title: 'Precision', desc: 'Micron-level accuracy in every manufactured part.' },
+  { icon: <Award size={28} />, title: 'Reliability', desc: 'EN 81 certified systems trusted worldwide.' },
+  { icon: <Globe size={28} />, title: 'Engineering Excellence', desc: 'Decades of advanced industrial R&D.' },
+  { icon: <Star size={28} />, title: 'Industrial Quality', desc: 'Premium grade materials and rigorous QC.' },
+];
+
+/* ─── Stats ─────────────────────────────────────────── */
+const STATS = [
+  { value: '20+', label: 'Years Experience' },
+  { value: '10+', label: 'Countries Served' },
+  { value: '5000+', label: 'Components Delivered' },
+  { value: '99.9%', label: 'Safety Precision' },
+];
+
+/* ══════════════════════════════════════════════════════
+   ABOUT PAGE
+══════════════════════════════════════════════════════ */
+export default function AboutPage() {
+  return (
+    <div className="font-['Inter',sans-serif] bg-white overflow-x-hidden">
+      <Navbar />
+
+      {/* ── HERO ── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F5F7FA] pt-20">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-[#111C5A]/5 blur-3xl" />
+          <div className="absolute bottom-0 -left-24 w-[400px] h-[400px] rounded-full bg-[#1565C0]/8 blur-3xl" />
+          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+            <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#111C5A" strokeWidth="1"/></pattern></defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full py-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
+                className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#111C5A]/15 bg-white/70 backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-[#1565C0] animate-pulse" />
+                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#111C5A]/60 font-['JetBrains_Mono',monospace]">About FasLift</span>
+              </motion.div>
+              <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+                className="font-['Poppins',sans-serif] font-black text-[#0D1540] leading-[1.0] tracking-[-0.03em] mb-6"
+                style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
+                ABOUT<br /><span className="text-[#1565C0]">FASLIFT</span>
+              </motion.h1>
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
+                className="text-lg text-[#0D1540]/60 mb-4 leading-relaxed max-w-lg">
+                Engineering next-generation elevator safety systems.
+              </motion.p>
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}
+                className="text-base text-[#0D1540]/50 mb-10 leading-relaxed max-w-md">
+                FasLift Solutions develops precision elevator safety technologies including speed governors, braking systems, and industrial lift components for modern infrastructure.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="flex flex-wrap gap-4">
+                <a href="#timeline" className="inline-flex items-center gap-2 bg-[#111C5A] text-white px-8 py-4 rounded-xl font-semibold text-sm hover:bg-[#1565C0] transition-colors duration-300">
+                  Explore History <ArrowRight size={16} />
+                </a>
+                <Link to="/#contact" className="inline-flex items-center gap-2 border border-[#111C5A]/20 text-[#111C5A] px-8 py-4 rounded-xl font-semibold text-sm hover:border-[#1565C0] hover:text-[#1565C0] transition-colors duration-300">
+                  Contact Us
+                </Link>
+              </motion.div>
+            </div>
+            <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3 }} className="relative flex items-center justify-center min-h-[500px]">
+              <div className="absolute w-[420px] h-[420px] rounded-full border border-[#111C5A]/8" />
+              <div className="absolute w-[320px] h-[320px] rounded-full border border-[#1565C0]/10" />
+              <div className="absolute w-[220px] h-[220px] rounded-full bg-[#1565C0]/5" />
+              <motion.img src="/images/elevator-hero.png" alt="FasLift Glass Elevator"
+                className="relative z-10 w-full max-w-[380px] h-auto"
+                style={{ filter: 'drop-shadow(0 24px 48px rgba(17,28,90,0.3))' }}
+                animate={{ y: [0, -14, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
+            </motion.div>
+          </div>
+        </div>
+        <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-[#111C5A]/30 font-['JetBrains_Mono',monospace]">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-[#111C5A]/30 to-transparent" />
+        </motion.div>
+      </section>
+
+      {/* ── INTRO / STATS ── */}
+      <IntroSection />
+
+      {/* ── HISTORY TIMELINE ── */}
+      <TimelineSection />
+
+      {/* ── VALUES ── */}
+      <ValuesSection />
+
+      <Footer />
+      <WhatsAppButton />
+      <ScrollToTop />
+      <FloatingToolbar />
+    </div>
+  );
+}
+
+
+/* ══════════════════════════════════════════════════════
+   TIMELINE ITEM  (line → dot → card, sequenced)
+══════════════════════════════════════════════════════ */
+const CARD_HEIGHT = 220;
+const LINE_DURATION = 0.85;
+const DOT_DELAY    = LINE_DURATION + 0.1;
+
+function TimelineCard({
+  item,
+  side,
+  cardReady,
+}: {
+  item: { year: string; title: string; desc: string };
+  side: 'left' | 'right';
+  cardReady: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 44, filter: 'blur(8px)' }}
+      animate={cardReady ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      className={`w-full max-w-[340px] ${side === 'left' ? 'self-end text-right' : 'self-start text-left'}`}
+    >
+      <div className={`mb-2 ${side === 'left' ? 'flex justify-end' : 'flex justify-start'}`}>
+        <span className="inline-block bg-[#0D1540] text-white font-['Poppins',sans-serif] font-black text-sm px-4 py-1 skew-x-[-6deg]">
+          <span className="inline-block skew-x-[6deg]">{item.year}</span>
+        </span>
+      </div>
+      <div className="group bg-[#1565C0] text-white p-5 hover:bg-[#111C5A] transition-colors duration-300 cursor-default overflow-hidden">
+        <h3 className="font-['Poppins',sans-serif] font-bold text-base mb-1">{item.title}</h3>
+        <p className="text-white/75 text-sm leading-relaxed">{item.desc}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+/* RailConnector: anchored at rail center, line shoots left or right via overflow:visible */
+function RailConnector({
+  side, cardIndex, totalCards, onComplete,
+}: {
+  side: 'left' | 'right'; cardIndex: number; totalCards: number; onComplete: () => void;
+}) {
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(wrapRef, { once: true, margin: '-60px' });
+  const topPct = (cardIndex / (totalCards - 1)) * 100;
+  const reach = 320; // px — stops at card outer edge, not inside
+  const endX  = side === 'left' ? -reach : reach;
+
+  return (
+    <div ref={wrapRef} className="absolute" style={{ left: 'calc(50% - 3px)', top: `calc(${topPct}% - 1px)`, width: 1, height: 1 }}>
+      <svg className="absolute pointer-events-none z-[6]" style={{ overflow: 'visible', left: 0, top: 0, width: 1, height: 1 }} fill="none">
+        <defs>
+          <linearGradient id={`g-${side}-${cardIndex}`} gradientUnits="userSpaceOnUse"
+            x1="0" y1="0" x2={String(endX)} y2="0">
+            <stop offset="0%"   stopColor="#1565C0" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#42a5f5" stopOpacity="0.15" />
+          </linearGradient>
+          <filter id={`gl-${side}-${cardIndex}`}>
+            <feGaussianBlur stdDeviation="2.5" result="b" />
+            <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+        {/* Glow stroke */}
+        <motion.line x1="0" y1="0" x2={endX} y2="0"
+          stroke={`url(#g-${side}-${cardIndex})`} strokeWidth="4" strokeLinecap="round"
+          filter={`url(#gl-${side}-${cardIndex})`}
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={isInView ? { pathLength: 1, opacity: 0.7 } : {}}
+          transition={{ duration: LINE_DURATION, ease: [0.22, 1, 0.36, 1] }}
+        />
+        {/* Dashed line */}
+        <motion.line x1="0" y1="0" x2={endX} y2="0"
+          stroke="#1565C0" strokeWidth="1.5" strokeDasharray="7 5" strokeLinecap="round"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
+          transition={{ duration: LINE_DURATION, ease: [0.22, 1, 0.36, 1] }}
+        />
+        {/* Endpoint dot — fires card reveal */}
+        <motion.circle cx={endX} cy={0} r="6"
+          fill="white" stroke="#1565C0" strokeWidth="2.5"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.35, delay: DOT_DELAY, ease: 'backOut' }}
+          onAnimationComplete={() => isInView && onComplete()}
+        />
+        {/* Pulse ring */}
+        <motion.circle cx={endX} cy={0} r="11" fill="none"
+          stroke="#1565C0" strokeWidth="1" strokeOpacity="0.4"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={isInView ? { scale: [0, 1.8], opacity: [0.5, 0] } : {}}
+          transition={{ duration: 0.7, delay: DOT_DELAY + 0.1, ease: 'easeOut' }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+function TimelineItem({
+  item, side, cardReady,
+}: {
+  item: { year: string; title: string; desc: string };
+  side: 'left' | 'right';
+  cardReady: boolean;
+}) {
+  return (
+    <div className={`relative flex flex-col min-h-[220px] py-10 overflow-hidden ${
+      side === 'left' ? 'items-end pr-6 text-right' : 'items-start pl-6 text-left'
+    }`}>
+      <TimelineCard item={item} side={side} cardReady={cardReady} />
+    </div>
+  );
+}
+
+function TimelineSection() {
+  const sectionRef     = useRef<HTMLDivElement>(null);
+  const railBodyRef    = useRef<HTMLDivElement>(null);
+  const elevatorRef    = useRef<HTMLDivElement>(null);
+  const fillLRef       = useRef<HTMLDivElement>(null);
+  const fillRRef       = useRef<HTMLDivElement>(null);
+  const mobileRailRef  = useRef<HTMLDivElement>(null);
+  const mobileElevRef  = useRef<HTMLDivElement>(null);
+  const mobileFillRef  = useRef<HTMLDivElement>(null);
+
+  const [readyCards, setReadyCards] = useState<boolean[]>(() => TIMELINE.map(() => false));
+  const markReady = (i: number) =>
+    setReadyCards(prev => { const next = [...prev]; next[i] = true; return next; });
+
+  const [mobileReadyCards, setMobileReadyCards] = useState<boolean[]>(() => TIMELINE.map(() => false));
+  const mobileTriggered = useRef<boolean[]>(TIMELINE.map(() => false));
+
+  /* GSAP: elevator travels from top dot to bottom dot, scrubbed by scroll */
+  useEffect(() => {
+    const section  = sectionRef.current;
+    const body     = railBodyRef.current;
+    const elevator = elevatorRef.current;
+    const fillL    = fillLRef.current;
+    const fillR    = fillRRef.current;
+    if (!section || !body || !elevator) return;
+
+    // Measure the actual rendered height of the center column (rail container)
+    const centerCol   = elevator.parentElement as HTMLElement;
+    const railH       = centerCol.offsetHeight;              // total rail pixel height
+    const imgH        = elevator.offsetHeight;               // elevator image height
+    // First dot is at top:0, last dot is at top:100% of centerCol
+    // We want elevator CENTER on each dot → offset by half image height
+    const startY      = -(imgH / 2);                        // center of image on first dot (top:0)
+    const endY        = railH - (imgH / 2);                 // center of image on last dot (top:100%)
+
+    const ctx = gsap.context(() => {
+      /* Elevator scrub */
+      gsap.fromTo(
+        elevator,
+        { y: startY },
+        {
+          y: endY,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1.8,
+          },
+        }
+      );
+
+      /* Progressive rail fill (left) */
+      if (fillL) {
+        gsap.fromTo(
+          fillL,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            ease: 'none',
+            transformOrigin: 'top center',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 0.5,
+            },
+          }
+        );
+      }
+      /* Progressive rail fill (right) */
+      if (fillR) {
+        gsap.fromTo(
+          fillR,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            ease: 'none',
+            transformOrigin: 'top center',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 0.5,
+            },
+          }
+        );
+      }
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
+  /* GSAP — mobile elevator (deferred so DOM is painted and offsetHeight is real) */
+  useEffect(() => {
+    const section = sectionRef.current;
+    const mRail   = mobileRailRef.current;
+    const mElev   = mobileElevRef.current;
+    const mFill   = mobileFillRef.current;
+    if (!section || !mRail || !mElev) return;
+
+    let ctx: ReturnType<typeof gsap.context>;
+
+    const init = () => {
+      const railH = mRail.offsetHeight;
+      const imgH  = mElev.offsetHeight;
+      if (railH === 0 || imgH === 0) return; // not visible yet (desktop)
+
+      const startY = -(imgH / 2);
+      const endY   = railH - (imgH / 2);
+      const totalItems = TIMELINE.length;
+
+      ctx = gsap.context(() => {
+        gsap.fromTo(mElev,
+          { y: startY },
+          { y: endY, ease: 'none',
+            scrollTrigger: {
+              trigger: section, start: 'top top', end: 'bottom bottom', scrub: 1.8,
+              onUpdate: (self) => {
+                // progress 0→1 maps elevator center from dot[0] to dot[last]
+                const p = self.progress;
+                TIMELINE.forEach((_, i) => {
+                  const dotP = i / (totalItems - 1); // progress at which elevator center is on dot i
+                  if (p >= dotP && !mobileTriggered.current[i]) {
+                    mobileTriggered.current[i] = true;
+                    setMobileReadyCards(prev => {
+                      const next = [...prev]; next[i] = true; return next;
+                    });
+                  }
+                  // reset when scrolling back up
+                  if (p < dotP && mobileTriggered.current[i]) {
+                    mobileTriggered.current[i] = false;
+                    setMobileReadyCards(prev => {
+                      const next = [...prev]; next[i] = false; return next;
+                    });
+                  }
+                });
+              },
+            }
+          }
+        );
+        if (mFill) gsap.fromTo(mFill,
+          { scaleY: 0 },
+          { scaleY: 1, ease: 'none', transformOrigin: 'top center',
+            scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom', scrub: 0.5 } }
+        );
+      }, section);
+    };
+
+    // Run after two animation frames to ensure layout is complete
+    const raf = requestAnimationFrame(() => requestAnimationFrame(init));
+
+    return () => {
+      cancelAnimationFrame(raf);
+      ctx?.revert();
+    };
+  }, []);
+
+  return (
+    <section id="timeline" ref={sectionRef} className="relative bg-[#F5F7FA] pt-36 pb-20 overflow-x-hidden">
+      {/* Heading */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 mb-32 text-center z-[10]">
+        <div className="inline-flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px] bg-[#1565C0]" />
+          <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">Our History</span>
+          <div className="w-8 h-[2px] bg-[#1565C0]" />
+        </div>
+        <h2 className="font-['Poppins',sans-serif] font-black text-[#0D1540]" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+          A Decade of <span className="text-[#1565C0]">Innovation</span>
+        </h2>
+      </div>
+
+      {/* Body */}
+      <div ref={railBodyRef} className="relative max-w-6xl mx-auto px-6 lg:px-12 mt-8">
+        <div className="hidden lg:flex">
+
+          {/* LEFT items (even) */}
+          <div className="flex-1 flex flex-col">
+            {TIMELINE.map((item, i) =>
+              i % 2 === 0
+                ? <TimelineItem key={item.year} item={item} side="left" cardReady={readyCards[i]} />
+                : <div key={item.year} style={{ minHeight: CARD_HEIGHT }} />
+            )}
+          </div>
+
+          {/* CENTER: rails + elevator + connectors */}
+          <div className="relative flex-shrink-0 w-[400px] lg:w-[600px]">
+
+            {/* Base rail tracks (dim) */}
+            <div className="absolute left-[calc(50%-16px)] top-0 bottom-0 w-[7px] bg-[#1565C0]/20 z-[2]" />
+            <div className="absolute left-[calc(50%+9px)] top-0 bottom-0 w-[7px] bg-[#1565C0]/20 z-[2]" />
+
+            {/* Progressive fill rails (bright, scaled by GSAP) */}
+            <div ref={fillLRef} className="absolute left-[calc(50%-16px)] top-0 bottom-0 w-[7px] bg-[#1565C0] z-[3] origin-top" />
+            <div ref={fillRRef} className="absolute left-[calc(50%+9px)] top-0 bottom-0 w-[7px] bg-[#1565C0] z-[3] origin-top" />
+
+            {/* Connector lines — start at rail, extend to cards */}
+            {TIMELINE.map((_, i) => (
+              <RailConnector
+                key={i}
+                side={i % 2 === 0 ? 'left' : 'right'}
+                cardIndex={i}
+                totalCards={TIMELINE.length}
+                onComplete={() => markReady(i)}
+              />
+            ))}
+
+            {/* Elevator — GSAP moves this */}
+            <div
+              ref={elevatorRef}
+              className="absolute z-[1] pointer-events-none"
+              style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '450px' }}
+            >
+              <img
+                src="/images/manufacturing.png"
+                alt="FasLift Elevator"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: 'auto',
+                  filter: 'drop-shadow(0 16px 40px rgba(17,28,90,0.35)) drop-shadow(0 4px 12px rgba(21,101,192,0.2))',
+                }}
+              />
+            </div>
+
+            {/* Glowing rail dots */}
+            {TIMELINE.map((_, i) => (
+              <div
+                key={i}
+                className="absolute left-1/2 -translate-x-1/2 w-[14px] h-[14px] rounded-full bg-white border-2 border-[#1565C0] z-[9] shadow-[0_0_10px_rgba(21,101,192,0.7)]"
+                style={{ top: `calc(${(i / (TIMELINE.length - 1)) * 100}% - 7px)` }}
+              />
+            ))}
+          </div>
+
+          {/* RIGHT items (odd) */}
+          <div className="flex-1 flex flex-col">
+            {TIMELINE.map((item, i) =>
+              i % 2 !== 0
+                ? <TimelineItem key={item.year} item={item} side="right" cardReady={readyCards[i]} />
+                : <div key={item.year} style={{ minHeight: CARD_HEIGHT }} />
+            )}
+          </div>
+
+        </div>
+      </div>
+
+      {/* ── MOBILE LAYOUT ── */}
+      <div className="lg:hidden relative max-w-sm mx-auto px-4 mt-4">
+        <div className="flex gap-3">
+
+          {/* Cards — LEFT */}
+          <div className="flex-1 flex flex-col">
+            {TIMELINE.map((item, i) => (
+              <MobileTimelineCard key={item.year} item={item} cardReady={mobileReadyCards[i]} />
+            ))}
+          </div>
+
+          {/* Rail — RIGHT */}
+          <div ref={mobileRailRef} className="relative flex-shrink-0 w-[50px]">
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[5px] bg-[#1565C0]/20 z-[2]" />
+            <div ref={mobileFillRef} className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[5px] bg-[#1565C0] z-[3] origin-top" />
+            {TIMELINE.map((_, i) => (
+              <div key={i}
+                className="absolute left-1/2 -translate-x-1/2 w-[11px] h-[11px] rounded-full bg-white border-2 border-[#1565C0] z-[9] shadow-[0_0_8px_rgba(21,101,192,0.6)]"
+                style={{ top: `calc(${(i / (TIMELINE.length - 1)) * 100}% - 5.5px)` }}
+              />
+            ))}
+            <div
+              ref={mobileElevRef}
+              className="absolute z-[5] pointer-events-none"
+              style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '200px' }}
+            >
+              <img src="/images/manufacturing.png" alt="FasLift Elevator"
+                style={{ display: 'block', width: '100%', height: 'auto',
+                  filter: 'drop-shadow(0 6px 16px rgba(17,28,90,0.3))' }}
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  );
+}
+
+function MobileTimelineCard({ item, cardReady }: { item: { year: string; title: string; desc: string }; cardReady: boolean }) {
+  return (
+    <div style={{ minHeight: CARD_HEIGHT }} className="flex flex-col justify-center py-4">
+      <motion.div
+        initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
+        animate={cardReady ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span className="inline-block bg-[#0D1540] text-white font-['Poppins',sans-serif] font-black text-xs px-3 py-1 mb-2 skew-x-[-6deg]">
+          <span className="inline-block skew-x-[6deg]">{item.year}</span>
+        </span>
+        <div className="bg-[#1565C0] text-white p-4">
+          <h3 className="font-['Poppins',sans-serif] font-bold text-sm mb-1">{item.title}</h3>
+          <p className="text-white/75 text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════
+   INTRO SECTION
+══════════════════════════════════════════════════════ */
+function IntroSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const imgY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
+
+  return (
+    <section ref={ref} className="py-24 md:py-32 bg-[#F5F7FA] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* LEFT — image */}
+          <motion.div className="relative overflow-hidden rounded-2xl shadow-2xl" style={{ y: imgY }}>
+            <img
+              src="/images/manufacturing.png"
+              alt="FasLift Manufacturing"
+              className="w-full h-[500px] object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111C5A]/60 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="font-['JetBrains_Mono',monospace] text-[10px] tracking-[0.2em] uppercase text-white/60">
+                Precision Manufacturing
+              </span>
+            </div>
+          </motion.div>
+
+          {/* RIGHT — text */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="w-8 h-[2px] bg-[#1565C0]" />
+              <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">
+                Who We Are
+              </span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-['Poppins',sans-serif] font-black text-[#0D1540] leading-tight mb-6"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+            >
+              Precision Manufacturing<br />
+              <span className="text-[#1565C0]">for Elevator Safety</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-[#0D1540]/60 text-base leading-relaxed mb-10"
+            >
+              For years, FasLift Solutions has specialized in advanced elevator safety engineering, delivering high-quality overspeed governors and lift safety technologies for international projects.
+            </motion.p>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-5">
+              {STATS.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  className="bg-white rounded-xl p-5 shadow-sm border border-[#111C5A]/5 hover:shadow-md hover:border-[#1565C0]/20 transition-all duration-300"
+                >
+                  <div className="font-['Poppins',sans-serif] font-black text-3xl text-[#1565C0] mb-1">{stat.value}</div>
+                  <div className="text-[12px] font-semibold text-[#0D1540]/50 uppercase tracking-wider">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════
+   VALUES SECTION
+══════════════════════════════════════════════════════ */
+function ValuesSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  return (
+    <section ref={ref} className="py-24 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 mb-4"
+          >
+            <div className="w-6 h-[2px] bg-[#1565C0]" />
+            <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">
+              Our Values
+            </span>
+            <div className="w-6 h-[2px] bg-[#1565C0]" />
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-['Poppins',sans-serif] font-black text-[#0D1540]"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+          >
+            Built on <span className="text-[#1565C0]">Excellence</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {VALUES.map((val, i) => (
+            <motion.div
+              key={val.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group bg-white border border-[#111C5A]/8 rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_40px_rgba(21,101,192,0.18)] hover:border-[#1565C0]/30 transition-all duration-400 cursor-default"
+            >
+              <div className="w-14 h-14 rounded-xl bg-[#F5F7FA] group-hover:bg-[#1565C0] flex items-center justify-center text-[#1565C0] group-hover:text-white transition-all duration-300 mb-5 shadow-sm">
+                {val.icon}
+              </div>
+              <h3 className="font-['Poppins',sans-serif] font-bold text-[#0D1540] text-lg mb-2">{val.title}</h3>
+              <p className="text-[#0D1540]/50 text-sm leading-relaxed">{val.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
