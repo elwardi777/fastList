@@ -348,9 +348,9 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="flex lg:hidden h-10 w-10 items-center justify-center rounded-lg
-                       text-[#0B3D78] transition-colors duration-200 hover:bg-[#0B3D78]/10
-                       hover:text-[#0B3D78] cursor-pointer"
+            className={`flex lg:hidden h-10 w-10 items-center justify-center rounded-lg
+                       transition-colors duration-200 cursor-pointer
+                       ${scrolled ? 'text-white hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
           >
             <Menu size={22} />
           </button>

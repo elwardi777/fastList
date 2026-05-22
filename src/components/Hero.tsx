@@ -65,12 +65,26 @@ const Hero: React.FC = () => {
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#edf2f8]"
     >
-      <div className="absolute inset-0 bg-[url('/images/Gemini_Generated_Image_n5y1hrn5y1hrnvggg5y1.png')] bg-cover bg-center bg-no-repeat lg:bg-[length:100%_auto] lg:bg-top" />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:bg-[length:100%_auto] lg:bg-top hero-bg-desktop"
+        style={{
+          backgroundImage: "url('/images/manufacturing-blueprint-mobile.png')",
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <style>{`
+          @media (min-width: 1024px) {
+            .hero-bg-desktop {
+              background-image: url('/images/Gemini_Generated_Image_n5y1hrn5y1hrnvggg5y1.png') !important;
+            }
+          }
+        `}</style>
+      </div>
 
       {/* =========================================================
           CONTENT WRAPPER
           ========================================================= */}
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16 py-16 lg:py-0">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16 pt-32 sm:pt-40 pb-16 lg:py-0">
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12 lg:gap-4">
           {/* -------------------------------------------------------
               LEFT SIDE — Text Content  (≈45%)
