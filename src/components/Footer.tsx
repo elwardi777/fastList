@@ -2,12 +2,6 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
-const QUICK_LINKS = [
-  { label: 'Products', href: '#products' },
-  { label: 'About', href: '#about' },
-  { label: 'Production', href: '#production' },
-  { label: 'Contact', href: '#contact' },
-];
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
