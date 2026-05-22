@@ -214,11 +214,11 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
       className="fixed inset-0 z-[1001] flex flex-col bg-[#0B3D78]/95 backdrop-blur-[20px]"
     >
       {/* Header row */}
-      <div className="flex h-[72px] items-center justify-between px-6">
+      <div className="flex h-[76px] items-center justify-between px-6">
         <img
           src="/images/governor-4-removebg-preview.png"
           alt="FasLift Solutions"
-          className="h-auto max-h-[72px] w-auto"
+          className="h-auto max-h-[76px] w-auto"
         />
         <button
           onClick={onClose}
@@ -337,7 +337,9 @@ export default function Navbar() {
           <img
             src="/images/governor-4-removebg-preview.png"
             alt="FasLift Solutions"
-            className="h-auto max-h-[64px] w-auto transition-opacity duration-200 hover:opacity-80"
+            className={`h-auto w-auto transition-all duration-300 hover:opacity-80 ${
+              scrolled ? 'max-h-[66px]' : 'max-h-[78px]'
+            }`}
           />
         </a>
 

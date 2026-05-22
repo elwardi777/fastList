@@ -44,13 +44,13 @@ const PrecisionManufacturingSection: React.FC = () => {
             src="/images/governor-hero.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-3 right-0 z-[1] block w-[min(52vw,220px)] max-w-[220px] h-auto drop-shadow-[0_22px_38px_rgba(11,61,120,0.22)] min-[390px]:w-[min(48vw,240px)] min-[390px]:max-w-[240px] lg:hidden"
+            className="pointer-events-none absolute bottom-3 -right-10 z-[1] block w-[min(82vw,360px)] max-w-[360px] h-auto drop-shadow-[0_22px_38px_rgba(11,61,120,0.22)] min-[390px]:w-[min(76vw,380px)] min-[390px]:max-w-[380px] min-[390px]:-right-16 lg:hidden"
             draggable={false}
           />
 
           <div className="order-2 w-[34%] shrink-0 lg:order-1 lg:block lg:w-[55%]" />
 
-          <div className="relative z-[2] order-1 flex min-w-0 flex-1 flex-col justify-center px-4 py-8 sm:px-8 lg:order-2 lg:w-[45%] lg:flex-none lg:-translate-y-14 lg:px-14 lg:py-10">
+          <div className="relative z-[2] order-1 flex min-w-0 flex-1 flex-col justify-center px-4 py-8 sm:px-8 -translate-y-16 sm:-translate-y-20 lg:-translate-y-24 lg:order-2 lg:w-[45%] lg:flex-none lg:px-14 lg:py-10">
             <motion.img
               src="/images/governor-4-removebg-preview.png"
               alt="FasLift Solutions"
@@ -58,7 +58,7 @@ const PrecisionManufacturingSection: React.FC = () => {
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
-              className="mb-5 h-[42px] w-auto self-start lg:mb-8 lg:h-[86px]"
+              className="mb-5 h-[78px] w-auto self-start lg:mb-8 lg:h-[120px]"
             />
 
             <motion.p
