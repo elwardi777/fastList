@@ -61,9 +61,16 @@ const fr = {
   media: {
     heading: 'MÉDIATHÈQUE',
     pdfDocument: 'Document PDF',
-    catalog1: 'Catalogue Limiteurs de Vitesse 2024',
-    catalog2: 'Aperçu des Composants de Sécurité',
-    catalog3: 'Spécifications Techniques',
+  },
+  catalog: {
+    title: 'Catalogue',
+    name: 'Catalogue FasLift Solutions',
+    download: 'Télécharger catalog.pdf',
+    close: 'Fermer',
+  },
+  toolbar: {
+    catalog: 'Voir le catalogue',
+    call: 'Nous appeler',
   },
   products: {
     heading: 'GAMMES DE PRODUITS',

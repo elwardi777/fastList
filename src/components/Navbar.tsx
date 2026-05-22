@@ -32,7 +32,7 @@ function useNavGroups(): NavGroup[] {
     {
       title: t('nav.mediaCenter'),
       links: [
-        { label: t('nav.eCatalog'), href: '/media/e-catalog' },
+        { label: t('nav.eCatalog'), href: '/catalog' },
         { label: t('nav.newsExhibitions'), href: '/media/news' },
       ],
     },

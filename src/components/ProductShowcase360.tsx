@@ -197,7 +197,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
   return (
     <div
       ref={containerRef}
-      className={`product-360-container relative flex flex-col items-center justify-center select-none ${className}`}
+      className={`product-360-container relative flex flex-col items-center justify-center select-none w-full max-w-full overflow-hidden ${className}`}
       onMouseDown={handlePointerDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handlePointerUp}
@@ -212,15 +212,15 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
     >
       {/* --- Product image --- */}
       <div
-        className="relative w-full flex items-center justify-center"
+        className="relative w-full max-w-full overflow-hidden flex items-center justify-center px-1"
         style={{
           perspective: '1000px',
-          minHeight: '340px',
+          minHeight: '280px',
         }}
       >
         {/* Floating wrapper */}
         <motion.div
-          className="relative"
+          className="relative max-w-full"
           style={{
             animation: 'float 4s ease-in-out infinite',
           }}
@@ -241,7 +241,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="h-[320px] sm:h-[400px] md:h-[460px] lg:h-[500px] w-[320px] sm:w-[400px] md:w-[460px] lg:w-[500px] object-contain float-shadow pointer-events-none"
+                className="h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[460px] lg:max-h-[500px] w-full max-w-[min(100%,320px)] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] object-contain float-shadow pointer-events-none mx-auto"
                 draggable={false}
               />
             </AnimatePresence>

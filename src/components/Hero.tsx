@@ -34,7 +34,7 @@ const fadeUpVariants = {
 };
 
 const showcaseVariants = {
-  hidden: { opacity: 0, scale: 0.92, x: 60 },
+  hidden: { opacity: 0, scale: 0.96, x: 0 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
               RIGHT SIDE — Product Showcase  (≈55%)
               ------------------------------------------------------- */}
           <motion.div
-            className="relative w-full lg:w-[55%] flex items-center justify-center"
+            className="relative w-full max-w-full overflow-hidden lg:w-[55%] flex items-center justify-center"
             variants={showcaseVariants}
             initial="hidden"
             animate="visible"

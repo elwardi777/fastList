@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FileText, Download } from 'lucide-react';
 import Lightbox from './Lightbox';
+import { CATALOG_PDF_URL, CATALOG_PDF_FILENAME } from '../constants/catalog';
 
 interface GalleryImage {
   src: string;
@@ -38,9 +39,7 @@ const Media: React.FC = () => {
   const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null);
 
   const CATALOGS: CatalogItem[] = [
-    { name: t('media.catalog1'), file: '#' },
-    { name: t('media.catalog2'), file: '#' },
-    { name: t('media.catalog3'), file: '#' },
+    { name: t('catalog.name'), file: CATALOG_PDF_URL },
   ];
 
   return (
@@ -97,9 +96,9 @@ const Media: React.FC = () => {
               {/* Download Button */}
               <a
                 href={catalog.file}
-                download
+                download={CATALOG_PDF_FILENAME}
                 className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 hover:bg-white hover:text-[#0B3D78] transition-all duration-200 shrink-0"
-                aria-label={`Download ${catalog.name}`}
+                aria-label={t('catalog.download')}
               >
                 <Download size={18} />
               </a>

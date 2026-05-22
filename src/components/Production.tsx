@@ -98,7 +98,7 @@ const Production: React.FC = () => {
         </div>
 
         {/* Mobile vertical timeline */}
-        <div className="md:hidden overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+        <div className="md:hidden overflow-x-hidden">
           <div className="flex flex-col items-start relative pl-8">
             {/* Vertical SVG connector */}
             <svg

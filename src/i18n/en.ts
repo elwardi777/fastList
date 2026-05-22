@@ -61,9 +61,16 @@ const en = {
   media: {
     heading: 'MEDIA CENTER',
     pdfDocument: 'PDF Document',
-    catalog1: 'Speed Governor Catalog 2024',
-    catalog2: 'Safety Components Overview',
-    catalog3: 'Technical Specifications',
+  },
+  catalog: {
+    title: 'Catalog',
+    name: 'FasLift Solutions Catalog',
+    download: 'Download catalog.pdf',
+    close: 'Close',
+  },
+  toolbar: {
+    catalog: 'View catalog',
+    call: 'Call us',
   },
   products: {
     heading: 'PRODUCT GROUPS',

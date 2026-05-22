@@ -39,12 +39,12 @@ const PrecisionManufacturingSection: React.FC = () => {
           draggable={false}
         />
 
-        <div className="absolute inset-0 flex flex-row bg-gradient-to-r from-white/96 via-white/72 to-transparent lg:bg-none">
+        <div className="absolute inset-0 flex flex-row overflow-hidden bg-gradient-to-r from-white/96 via-white/72 to-transparent lg:bg-none">
           <img
             src="/images/governor-hero.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-3 right-[-52px] z-[1] block w-[255px] max-w-none drop-shadow-[0_22px_38px_rgba(11,61,120,0.22)] min-[390px]:right-[-40px] min-[390px]:w-[275px] lg:hidden"
+            className="pointer-events-none absolute bottom-3 right-0 z-[1] block w-[min(52vw,220px)] max-w-[220px] h-auto drop-shadow-[0_22px_38px_rgba(11,61,120,0.22)] min-[390px]:w-[min(48vw,240px)] min-[390px]:max-w-[240px] lg:hidden"
             draggable={false}
           />
 

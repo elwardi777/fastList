@@ -45,6 +45,9 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   body {
@@ -52,7 +55,15 @@
     background-color: #0B3D78;
     color: #FFFFFF;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
     line-height: 1.6;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   ::selection {
@@ -280,6 +291,8 @@
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .product-360-container:active {

@@ -12,7 +12,7 @@ import ScrollToTop from '../components/ScrollToTop'
 
 export default function LandingPage() {
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-full overflow-x-hidden">
       {/* Fixed UI Elements */}
       <Navbar />
       <WhatsAppButton />
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <FloatingToolbar />
 
       {/* Page Sections */}
-      <main>
+      <main className="w-full max-w-full overflow-x-hidden">
         <section id="hero">
           <Hero />
         </section>
