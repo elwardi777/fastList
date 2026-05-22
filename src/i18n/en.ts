@@ -91,7 +91,9 @@ const en = {
   },
   catalog: {
     title: 'Catalog',
-    name: 'FasLift Solutions Catalog',
+    name: 'Product Catalog',
+    description: 'Browse the Fas Lift product catalog or download it to your device.',
+    downloadText: 'DOWNLOAD',
     download: 'Download catalog.pdf',
     close: 'Close',
   },

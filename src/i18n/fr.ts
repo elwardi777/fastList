@@ -91,7 +91,9 @@ const fr = {
   },
   catalog: {
     title: 'Catalogue',
-    name: 'Catalogue FasLift Solutions',
+    name: 'Catalogue de Produits',
+    description: 'Parcourez le catalogue de produits Di-San Gear ou téléchargez-le sur votre appareil.',
+    downloadText: 'TÉLÉCHARGER',
     download: 'Télécharger catalog.pdf',
     close: 'Fermer',
   },

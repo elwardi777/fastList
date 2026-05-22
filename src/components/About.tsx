@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Eye, Factory } from 'lucide-react';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
@@ -98,20 +98,8 @@ With a strong focus on safety, quality, and customer satisfaction, FAS LIST cont
         </div>
 
         <div className="mt-16 grid gap-5 md:grid-cols-2 lg:max-w-4xl lg:mx-auto">
-            <div className="about-reveal bg-[#0B3D78] p-7 text-white shadow-[0_22px_60px_rgba(11,61,120,0.18)]">
-              <Eye className="mb-5 h-7 w-7 text-white/80" />
-              <h3 className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-white">Our Vision</h3>
-              <p className="text-sm leading-7 text-white/72">
-                To become a global leader in elevator safety technology by continuously developing innovative solutions that redefine reliability, protection, and engineering precision.
-              </p>
-            </div>
-            <div className="about-reveal border border-[#0B3D78]/10 bg-white p-7 shadow-[0_16px_50px_rgba(11,61,120,0.08)]">
-              <Factory className="mb-5 h-7 w-7 text-[#0B3D78]" />
-              <h3 className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-[#0B3D78]">Our Mission</h3>
-              <p className="text-sm leading-7 text-[#0B3D78]/70">
-                To manufacture world-class elevator safety systems that protect lives, improve performance, and support the future of modern vertical transportation.
-              </p>
-            </div>
+           
+         
         </div>
       </div>
     </section>
