@@ -15,11 +15,11 @@ export default function ContactPage() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative flex h-[50vh] items-center justify-center overflow-hidden bg-white pt-20">
+      <section className="relative flex min-h-[400px] md:min-h-[500px] md:h-auto items-center justify-center overflow-hidden bg-white pt-24 pb-16 md:pt-28 md:pb-36">
         {/* Background Image Container */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 md:left-auto md:w-1/2 z-0">
           <img
-            src="/images/Gemini_Generated_Image_v101wmv101wmv101.png"
+            src="/images/Gemini_Generated_Image_pnhwm6pnhwm6pnhw.png"
             alt="FasLift Contact Background"
             className="h-full w-full object-cover opacity-85"
           />
@@ -33,9 +33,11 @@ export default function ContactPage() {
             <rect width="100%" height="100%" fill="url(#grid-contact)" />
           </svg>
           {/* Gradients to guarantee text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F7FA] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 md:bg-gradient-to-r md:from-white md:via-white/70 md:to-transparent" />
         </div>
+
+        {/* Full-width bottom gradient to transition to Contact section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F7FA] to-transparent pointer-events-none z-0" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-[620px]">
@@ -65,7 +67,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-3 text-base text-[#0B3D78]/70 max-w-md"
+              className="mt-3 text-base text-[#0B3D78]/70 max-w-md md:max-w-lg"
             >
               Have questions about our speed governors or elevator safety systems? Our engineering team is here to assist you.
             </motion.p>
