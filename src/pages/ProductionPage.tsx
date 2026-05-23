@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ChevronLeft, ChevronRight, Settings, Cpu, ShieldCheck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Settings, Cpu, ShieldCheck } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -46,40 +45,48 @@ export default function ProductionPage() {
 
   return (
     <div className="font-sans bg-[#F5F7FA] min-h-screen overflow-x-hidden text-[#4a5568]">
-      <Navbar />
+      <Navbar forceDark />
 
       {/* ── HERO SECTION ── */}
-      <section className="relative overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28 border-b border-[#0d2b5e]/5">
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 z-0 overflow-hidden opacity-[0.05] pointer-events-none">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0B3D78" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#hero-grid)" />
-          </svg>
+      <section className="relative flex min-h-[480px] md:min-h-[560px] items-center justify-start overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/Gemini_Generated_Image_6gzqlo6gzqlo6gzq.png"
+            alt="FasLift Production Facility"
+            className="h-full w-full object-cover object-center"
+          />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d2b5e]/90 via-[#0d2b5e]/60 to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#F5F7FA] to-transparent" />
         </div>
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F7FA]/50 via-white to-white z-0" />
+
+        {/* Grid pattern overlay */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-[1]" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" strokeWidth="1"/></pattern></defs>
+          <rect width="100%" height="100%" fill="url(#hero-grid)" />
+        </svg>
+
+        {/* Decorative gold accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4A843]/40 to-transparent z-10" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0B3D78]/60 mb-6">
-            <Link to="/" className="hover:text-[#0B3D78] transition-colors">
-              {t('productionPage.breadcrumbHome')}
-            </Link>
-            <span>&gt;</span>
-            <span className="text-[#0B3D78]">{t('productionPage.breadcrumbCurrent')}</span>
-          </nav>
+          <div className="max-w-2xl">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="font-mono text-xs tracking-[0.2em] uppercase text-[#D4A843] mb-4"
+            >
+              {t('productionPage.sectionTitle')}
+            </motion.p>
 
-          <div className="max-w-3xl">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-black text-[#0B3D78] uppercase leading-tight tracking-tight mb-6"
+              className="font-display font-black text-white uppercase leading-tight tracking-tight mb-6"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 4.2rem)' }}
             >
               {t('productionPage.heroTitle')}
@@ -89,13 +96,14 @@ export default function ProductionPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base md:text-lg text-[#0b3d78]/80 leading-relaxed font-normal"
+              className="text-base md:text-lg text-white/75 leading-relaxed font-normal"
             >
               {t('productionPage.heroSubtitle')}
             </motion.p>
           </div>
         </div>
       </section>
+
 
       {/* ── MAIN CONTENT SECTION ── */}
       <section className="py-24 px-6 md:px-12 bg-[#F5F7FA] relative z-10">

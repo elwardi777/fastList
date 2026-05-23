@@ -54,14 +54,15 @@ const LANGUAGES = [
 /*  Desktop dropdown (pure CSS hover via group)                        */
 /* ------------------------------------------------------------------ */
 
-function DesktopDropdown({ group, scrolled }: { group: NavGroup; scrolled: boolean }) {
+function DesktopDropdown({ group, scrolled, forceDark }: { group: NavGroup; scrolled: boolean; forceDark?: boolean }) {
+  const isLight = !scrolled && !forceDark;
   return (
     <div className="group relative">
       {/* Trigger */}
       <button
         className={`flex items-center gap-1 px-3 py-2 text-[14px] uppercase font-medium tracking-[0.08em]
                    transition-colors duration-200 cursor-pointer font-['Inter',sans-serif]
-                   ${scrolled ? 'text-white/90 hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+                   ${isLight ? 'text-[#0B3D78] hover:text-[#0B3D78]/70' : 'text-white/90 hover:text-white'}`}
       >
         {group.title}
         <ChevronDown
@@ -102,9 +103,10 @@ function DesktopDropdown({ group, scrolled }: { group: NavGroup; scrolled: boole
 /*  Language selector (desktop)                                        */
 /* ------------------------------------------------------------------ */
 
-function LanguageSelector({ scrolled }: { scrolled: boolean }) {
+function LanguageSelector({ scrolled, forceDark }: { scrolled: boolean; forceDark?: boolean }) {
   const { i18n } = useTranslation()
   const currentLang = i18n.language?.startsWith('fr') ? 'fr' : 'en'
+  const isLight = !scrolled && !forceDark;
 
   const switchLang = (code: string) => {
     i18n.changeLanguage(code)
@@ -115,7 +117,7 @@ function LanguageSelector({ scrolled }: { scrolled: boolean }) {
       <button
         className={`flex items-center gap-1.5 px-3 py-2 text-[13px] font-semibold tracking-wide
                    transition-colors duration-200 cursor-pointer font-['JetBrains_Mono',monospace]
-                   ${scrolled ? 'text-white/80 hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+                   ${isLight ? 'text-[#0B3D78] hover:text-[#0B3D78]/70' : 'text-white/80 hover:text-white'}`}
       >
         <Globe size={15} className="opacity-70" />
         {currentLang.toUpperCase()}
@@ -313,11 +315,12 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
 /*  Navbar                                                             */
 /* ------------------------------------------------------------------ */
 
-export default function Navbar() {
+export default function Navbar({ forceDark }: { forceDark?: boolean } = {}) {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const NAV_GROUPS = useNavGroups()
+  const isLight = !scrolled && !forceDark;
 
   /* Track scroll position ------------------------------------------ */
   useEffect(() => {
@@ -358,13 +361,13 @@ export default function Navbar() {
         {/* ---- Desktop nav (center) ---- */}
         <nav className="hidden lg:flex items-center gap-1">
           {NAV_GROUPS.map((group) => (
-            <DesktopDropdown key={group.title} group={group} scrolled={scrolled} />
+            <DesktopDropdown key={group.title} group={group} scrolled={scrolled} forceDark={forceDark} />
           ))}
           <a
             href="/support"
             className={`px-3 py-2 text-[14px] uppercase font-medium tracking-[0.08em]
                        transition-colors duration-200 cursor-pointer font-['Inter',sans-serif]
-                       ${scrolled ? 'text-white/90 hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+                       ${isLight ? 'text-[#0B3D78] hover:text-[#0B3D78]/70' : 'text-white/90 hover:text-white'}`}
           >
             {t('nav.support')}
           </a>
@@ -372,7 +375,7 @@ export default function Navbar() {
             href="/corporate/contact"
             className={`px-3 py-2 text-[14px] uppercase font-medium tracking-[0.08em]
                        transition-colors duration-200 cursor-pointer font-['Inter',sans-serif]
-                       ${scrolled ? 'text-white/90 hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+                       ${isLight ? 'text-[#0B3D78] hover:text-[#0B3D78]/70' : 'text-white/90 hover:text-white'}`}
           >
             {t('nav.contact')}
           </a>
@@ -382,7 +385,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           {/* Language – desktop only */}
           <div className="hidden lg:block">
-            <LanguageSelector scrolled={scrolled} />
+            <LanguageSelector scrolled={scrolled} forceDark={forceDark} />
           </div>
 
           {/* Hamburger – mobile only */}
@@ -391,7 +394,7 @@ export default function Navbar() {
             aria-label="Open menu"
             className={`flex lg:hidden h-10 w-10 items-center justify-center rounded-lg
                        transition-colors duration-200 cursor-pointer
-                       ${scrolled ? 'text-white hover:text-white' : 'text-[#0B3D78] hover:text-[#0B3D78]/70'}`}
+                       ${isLight ? 'text-[#0B3D78] hover:text-[#0B3D78]/70' : 'text-white hover:text-white'}`}
           >
             <Menu size={22} />
           </button>

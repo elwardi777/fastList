@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 import TrustedStandardSection from '../components/TrustedStandardSection'
 import PrecisionManufacturingSection from '../components/PrecisionManufacturingSection'
 import StatsCounter from '../components/StatsCounter'
-import Production from '../components/Production'
+
 import Media from '../components/Media'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
@@ -39,9 +39,7 @@ export default function LandingPage() {
           <StatsCounter />
         </section>
 
-        <section id="production">
-          <Production />
-        </section>
+
 
         <section id="media">
           <Media />
