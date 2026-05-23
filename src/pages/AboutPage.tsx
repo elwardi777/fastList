@@ -106,6 +106,7 @@ FAS LIST specializes in the development and supply of high-performance Speed Gov
 
       {/* ── INTRO / STATS ── */}
       <IntroSection />
+      <TrustedStandardSection />
 
       {/* ── HISTORY TIMELINE ── */}
       <TimelineSection />
