@@ -547,8 +547,8 @@ export default function SupportPage() {
       </AnimatePresence>
 
       {/* ── SECTION 4: NEWSLETTER ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#f4f7fb]">
-        <div className="max-w-xl mx-auto text-center flex flex-col items-center">
+      <section className="overflow-x-hidden py-24 px-6 md:px-12 bg-[#f4f7fb]">
+        <div className="w-full max-w-xl mx-auto text-center flex flex-col items-center">
           <h2 className="font-display font-bold text-3xl text-[#0d2b5e] mb-3">
             {t('supportNew.newsletterTitle')}
           </h2>
@@ -556,8 +556,8 @@ export default function SupportPage() {
             {t('supportNew.newsletterSubtitle')}
           </p>
 
-          <form onSubmit={handleNewsletterSubmit} className="w-full mb-4">
-            <div className="flex flex-col sm:flex-row items-stretch rounded-full border-2 border-[#1a4a8a] overflow-hidden bg-white">
+          <form onSubmit={handleNewsletterSubmit} className="w-full max-w-full mb-4">
+            <div className="flex w-full min-w-0 flex-col sm:flex-row items-stretch rounded-[28px] sm:rounded-full border-2 border-[#1a4a8a] overflow-hidden bg-white">
               <input
                 type="text"
                 placeholder={t('supportNew.newsletterPlaceholder')}
@@ -566,11 +566,11 @@ export default function SupportPage() {
                   setNewsEmail(e.target.value);
                   if (newsError) setNewsError('');
                 }}
-                className="flex-grow px-6 py-4 text-[14px] outline-none bg-white"
+                className="w-full min-w-0 flex-1 px-5 py-4 text-[14px] outline-none bg-white"
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-[#0d2b5e] text-white font-bold text-[14px] hover:bg-[#1a4a8a] transition-colors duration-200 cursor-pointer sm:shrink-0"
+                className="w-full sm:w-auto px-8 py-4 bg-[#0d2b5e] text-white font-bold text-[14px] hover:bg-[#1a4a8a] transition-colors duration-200 cursor-pointer sm:shrink-0"
               >
                 {t('supportNew.subscribe')}
               </button>

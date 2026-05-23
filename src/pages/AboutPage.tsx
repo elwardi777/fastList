@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
-import { ArrowRight, Shield, Zap, Settings, Award, Globe, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -22,16 +22,6 @@ const TIMELINE = [
   { year: '2021', title: 'CNC Integration', desc: 'Integrated CNC manufacturing and advanced engineering systems.' },
   { year: '2023', title: 'Smart Technology', desc: 'Developed next-generation smart overspeed governor technology.' },
   { year: '2025', title: 'Global Brand', desc: 'FasLift Solutions becomes an international elevator safety solutions brand.' },
-];
-
-/* ─── Values data ──────────────────────────────────── */
-const VALUES = [
-  { icon: <Zap size={28} />, title: 'Innovation', desc: 'Pioneering next-gen safety engineering solutions.' },
-  { icon: <Shield size={28} />, title: 'Safety', desc: 'Zero compromise on elevator passenger protection.' },
-  { icon: <Settings size={28} />, title: 'Precision', desc: 'Micron-level accuracy in every manufactured part.' },
-  { icon: <Award size={28} />, title: 'Reliability', desc: 'EN 81 certified systems trusted worldwide.' },
-  { icon: <Globe size={28} />, title: 'Engineering Excellence', desc: 'Decades of advanced industrial R&D.' },
-  { icon: <Star size={28} />, title: 'Industrial Quality', desc: 'Premium grade materials and rigorous QC.' },
 ];
 
 /* ══════════════════════════════════════════════════════
@@ -117,13 +107,8 @@ FAS LIST specializes in the development and supply of high-performance Speed Gov
       {/* ── INTRO / STATS ── */}
       <IntroSection />
 
-      <TrustedStandardSection />
-
       {/* ── HISTORY TIMELINE ── */}
       <TimelineSection />
-
-      {/* ── VALUES ── */}
-      <ValuesSection />
 
       <Footer />
       <WhatsAppButton />
@@ -559,60 +544,4 @@ function MobileTimelineCard({ item, cardReady }: { item: { year: string; title: 
 ══════════════════════════════════════════════════════ */
 function IntroSection() {
   return <About />;
-}
-
-/* ══════════════════════════════════════════════════════
-   VALUES SECTION
-══════════════════════════════════════════════════════ */
-function ValuesSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
-
-  return (
-    <section ref={ref} className="py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 mb-4"
-          >
-            <div className="w-6 h-[2px] bg-[#1565C0]" />
-            <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">
-              Our Values
-            </span>
-            <div className="w-6 h-[2px] bg-[#1565C0]" />
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-['Poppins',sans-serif] font-black text-[#0D1540]"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
-          >
-            Built on <span className="text-[#1565C0]">Excellence</span>
-          </motion.h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {VALUES.map((val, i) => (
-            <motion.div
-              key={val.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white border border-[#111C5A]/8 rounded-2xl p-8 shadow-sm hover:shadow-[0_8px_40px_rgba(21,101,192,0.18)] hover:border-[#1565C0]/30 transition-all duration-400 cursor-default"
-            >
-              <div className="w-14 h-14 rounded-xl bg-[#F5F7FA] group-hover:bg-[#1565C0] flex items-center justify-center text-[#1565C0] group-hover:text-white transition-all duration-300 mb-5 shadow-sm">
-                {val.icon}
-              </div>
-              <h3 className="font-['Poppins',sans-serif] font-bold text-[#0D1540] text-lg mb-2">{val.title}</h3>
-              <p className="text-[#0D1540]/50 text-sm leading-relaxed">{val.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
 }
