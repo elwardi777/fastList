@@ -176,16 +176,22 @@ export default function SupportPage() {
       {/* ── SECTION 2: TALK TO SOMEONE CARD ── */}
       <section className="py-24 px-6 md:px-12 bg-[#F5F7FA] relative z-20 flex flex-col items-center text-center">
         {/* Card Wrapper */}
-        <div className="relative w-full max-w-3xl mx-auto bg-white rounded-[24px] border border-[#0d2b5e]/5 px-8 pt-24 pb-12 md:px-12 md:pt-32 md:pb-16 shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
+        <div className="relative w-full max-w-3xl mx-auto bg-white rounded-[24px] border border-[#0d2b5e]/5 px-8 pt-32 pb-12 md:px-12 md:pt-40 md:pb-16 shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
           
-          {/* Circular Support Badge - Overlapping the top border */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-[0_12px_30px_rgba(11,61,120,0.15)] bg-white flex items-center justify-center">
-            <img
-              src="/images/Gemini_Generated_Image_7u29fv7u29fv7u29-removebg-preview.png"
-              alt="Support Agent"
-              className="w-full h-full object-cover object-center"
-              draggable={false}
-            />
+          {/* Layered 3D Support Badge - Overlapping the top border */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-56 md:h-56 flex items-center justify-center">
+            {/* White Circular Background (Smaller than the gear) */}
+            <div className="absolute w-36 h-36 md:w-44 md:h-44 rounded-full bg-white shadow-[0_8px_25px_rgba(11,61,120,0.06)] border border-[#0d2b5e]/5 z-0" />
+            
+            {/* Gear Support Image - Extending beyond the white circle with floating shadow */}
+            <div className="relative z-10 w-44 h-44 md:w-52 md:h-52 drop-shadow-[0_15px_30px_rgba(11,61,120,0.22)] flex items-center justify-center">
+              <img
+                src="/images/Gemini_Generated_Image_73we9t73we_3d.png"
+                alt="Support Agent"
+                className="w-full h-full object-contain"
+                draggable={false}
+              />
+            </div>
           </div>
 
           <h2 className="font-display font-bold text-[28px] md:text-[32px] text-[#0d2b5e] leading-tight mb-3">
