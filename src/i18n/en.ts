@@ -159,7 +159,7 @@ const en = {
     contactUs: 'Contact Us',
     request: 'Request',
     talkTitle: 'Do you want to talk to someone?',
-    talkSubtitle: 'Our customer support team is here to assist you. Give us a call or chat with us on WhatsApp.',
+    talkSubtitle: 'Fill out the form and send us your request, we will reply as soon as possible',
     formSubtitle: 'Please fill out the form below and we will get back to you shortly.',
     formName: 'Name',
     formEmail: 'Email',

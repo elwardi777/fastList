@@ -101,6 +101,12 @@ export default function SupportPage() {
       setNewsError(t('supportNew.consentError'));
       return;
     }
+
+    // Open mailto link pre-filled
+    const subject = `FAS LIFT Newsletter Subscription`;
+    const body = `I would like to subscribe to the FasLift newsletter.\n\nEmail: ${newsEmail}`;
+    window.location.href = `mailto:abderahmanelwardi62@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setNewsSuccess(true);
     setNewsEmail('');
     setNewsConsent(false);
@@ -166,81 +172,56 @@ export default function SupportPage() {
           </motion.p>
         </div>
       </section>
-  {/* ── SECTION 2: HERO BANNER ── */}
-      <section className="py-20 px-6 md:px-12 bg-white border-t border-b border-[#e6f0fb] flex flex-col items-center text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          {/* Gear Frame & Support Icon Cutout */}
-          <div className="relative w-36 h-36 mb-6 flex items-center justify-center">
-            {/* Gear Icon SVG Frame */}
-            <svg
-              className="absolute inset-0 w-full h-full text-[#1a4a8a]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
 
-            {/* Inner cut-out showing abstract illustration */}
-            <div className="absolute w-[68px] h-[68px] bg-white rounded-full flex items-center justify-center z-10 border border-[#e6f0fb]">
-              <svg
-                className="w-9 h-9 text-[#1a4a8a]"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-                />
-              </svg>
-            </div>
+      {/* ── SECTION 2: TALK TO SOMEONE CARD ── */}
+      <section className="py-24 px-6 md:px-12 bg-[#F5F7FA] relative z-20 flex flex-col items-center text-center">
+        {/* Card Wrapper */}
+        <div className="relative w-full max-w-3xl mx-auto bg-white rounded-[24px] border border-[#0d2b5e]/5 px-8 pt-24 pb-12 md:px-12 md:pt-32 md:pb-16 shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
+          
+          {/* Circular Support Badge - Overlapping the top border */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-[0_12px_30px_rgba(11,61,120,0.15)] bg-white flex items-center justify-center">
+            <img
+              src="/images/Gemini_Generated_Image_7u29fv7u29fv7u29-removebg-preview.png"
+              alt="Support Agent"
+              className="w-full h-full object-cover object-center"
+              draggable={false}
+            />
           </div>
 
-          <h2 className="font-display font-bold text-[32px] text-[#0d2b5e] leading-tight mb-2">
+          <h2 className="font-display font-bold text-[28px] md:text-[32px] text-[#0d2b5e] leading-tight mb-3">
             {t('supportNew.talkTitle')}
           </h2>
 
-          <p className="text-[15px] text-[#4a5568] max-w-md mb-6 leading-relaxed">
+          <p className="text-[15px] md:text-[16px] text-[#4a5568]/80 max-w-lg mx-auto mb-6 leading-relaxed">
             {t('supportNew.talkSubtitle')}
           </p>
 
           <a
             href="tel:+212653660399"
-            className="text-[24px] font-bold text-[#1a4a8a] hover:text-[#0d2b5e] transition-colors mb-6 block cursor-pointer"
+            className="text-[24px] md:text-[28px] font-extrabold text-[#1a4a8a] hover:text-[#0d2b5e] transition-colors mb-6 block cursor-pointer"
           >
             +212 653-660399
           </a>
 
           {/* WhatsApp Pill */}
-          <a
-            href="https://wa.me/212653660399"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white rounded-full font-semibold text-[14px] transition-colors duration-200 hover:bg-[#20ba5a] cursor-pointer shadow-none"
-          >
-            {/* WhatsApp Icon SVG */}
-            <svg
-              className="w-5 h-5 fill-current"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="flex justify-center">
+            <a
+              href="https://wa.me/212653660399"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-3.5 bg-[#25d366] text-white rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-[#20ba5a] hover:scale-105 cursor-pointer shadow-[0_8px_20px_rgba(37,211,102,0.25)]"
             >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>WhatsApp</span>
-          </a>
+              {/* WhatsApp Icon SVG */}
+              <svg
+                className="w-5 h-5 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
       </section>
 
