@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage'
 import CatalogPage from './pages/CatalogPage'
 import ContactPage from './pages/ContactPage'
 import SupportPage from './pages/SupportPage'
+import ProductionPage from './pages/ProductionPage'
 
 function ScrollToTopOnNavigation() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
         <Route path="/media/e-catalog" element={<CatalogPage />} />
         <Route path="/corporate/contact" element={<ContactPage />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="/corporate/production" element={<ProductionPage />} />
       </Routes>
     </>
   )
