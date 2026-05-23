@@ -441,3 +441,27 @@
 .animate-grid-slow {
   animation: grid-drift 40s linear infinite;
 }
+
+/* Premium card hover style for TrustedStandardSection */
+.trusted-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(11, 61, 120, 0.15);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.85), 
+    0 24px 56px rgba(11, 61, 120, 0.07), 
+    0 8px 20px rgba(11, 61, 120, 0.04);
+  transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trusted-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(11, 61, 120, 0.35);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.95), 
+    inset 0 0 0 1px rgba(11, 61, 120, 0.05),
+    0 38px 74px rgba(11, 61, 120, 0.15), 
+    0 12px 34px rgba(11, 61, 120, 0.06);
+}

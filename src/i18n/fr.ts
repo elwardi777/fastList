@@ -19,7 +19,7 @@ const fr = {
     line3: 'ASCENSEURS DE CONFIANCE',
     subtitle:
       'FasLift Solutions fabrique des limiteurs de vitesse et des systèmes de sécurité pour ascenseurs de haute performance pour les infrastructures de transport vertical modernes.',
-    cta: 'VOIR LES PRODUITS',
+    cta: 'JE SOUHAITE OBTENIR DEVIS',
   },
   about: {
     title: 'CONÇU POUR LES INFRASTRUCTURES CRITIQUES',

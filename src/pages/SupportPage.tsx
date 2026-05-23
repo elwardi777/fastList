@@ -125,28 +125,27 @@ export default function SupportPage() {
       <Navbar />
 
       {/* ── HERO SECTION ── */}
-      <section className="relative flex min-h-[400px] items-center justify-center overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28 product-groups-waves product-groups-blueprint">
-       
-        {/* Subtle grid pattern overlay & wave styles from product groups */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-40" />
+      <section className="relative flex min-h-[400px] items-center justify-center overflow-hidden bg-white pt-32 pb-20 md:pt-40 md:pb-28">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/images/Gemini_Generated_Image_ybxbbnybxbbnybxb.png"
+            alt="FasLift Support Background"
+            className="h-full w-full object-cover object-center"
+          />
+          {/* Subtle grid pattern overlay */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+            <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0B3D78" strokeWidth="1"/></pattern></defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+          {/* Gradient overlay to guarantee text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/85 to-transparent" />
+        </div>
 
         {/* Decorative gold/navy technical sketch line */}
-       
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4A843]/30 to-transparent z-10" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0B3D78]/15 bg-white/75 px-4.5 py-2 backdrop-blur-sm shadow-sm"
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#D4A843] animate-pulse" />
-            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#0B3D78]/70">
-              {t('support.heading')}
-            </span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

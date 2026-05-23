@@ -19,7 +19,7 @@ const en = {
     line3: 'MANUFACTURER',
     subtitle:
       'FasLift Solutions manufactures premium elevator speed governors and elevator safety systems for modern vertical transportation infrastructure.',
-    cta: 'GO TO PRODUCTS',
+    cta: 'I WANT TO GET A QUOTE',
   },
   about: {
     title: 'ENGINEERED FOR CRITICAL INFRASTRUCTURE',

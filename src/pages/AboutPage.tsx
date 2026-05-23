@@ -46,10 +46,17 @@ export default function AboutPage() {
       <section className="relative flex min-h-[100svh] items-start overflow-hidden bg-white pt-24 pb-16 lg:min-h-screen lg:items-center lg:pt-20 lg:pb-0">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Mobile Image (Phone mode) */}
+          <img
+            src="/images/Capture d’écran 2026-05-23 124814.png"
+            alt="FasLift Speed Governor"
+            className="h-full w-full object-cover object-bottom lg:hidden"
+          />
+          {/* PC Image (PC mode) */}
           <img
             src="/images/Gemini_Generated_Image_ibchg1ibchg1ibch.png"
             alt="FasLift Engineering Background"
-            className="h-full w-full object-cover object-[62%_center] opacity-85 sm:object-right md:object-center lg:object-cover lg:object-center lg:opacity-90"
+            className="hidden h-full w-full object-cover object-[62%_center] opacity-85 sm:object-right md:object-center lg:block lg:object-cover lg:object-center lg:opacity-90"
           />
           {/* Subtle grid pattern overlay */}
           <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +64,7 @@ export default function AboutPage() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
           {/* Left-to-right gradient overlay to guarantee text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/96 to-white/62 sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-white/10 md:from-white md:via-white/90 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/85 to-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-white/10 md:from-white md:via-white/90 md:to-transparent" />
           <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent sm:hidden" />
           {/* Bottom fade for smooth transition to next section */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F7FA] to-transparent pointer-events-none" />
@@ -91,7 +98,7 @@ FAS LIST specializes in the development and supply of high-performance Speed Gov
                 <a href="#timeline" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#111C5A] px-6 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#1565C0] lg:w-auto lg:px-8">
                   Explore History <ArrowRight size={16} />
                 </a>
-                <Link to="/#contact" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#111C5A]/20 bg-white/50 px-6 py-4 text-sm font-semibold text-[#111C5A] backdrop-blur-sm transition-colors duration-300 hover:border-[#1565C0] hover:text-[#1565C0] lg:w-auto lg:bg-transparent lg:px-8 lg:backdrop-blur-none">
+                <Link to="/corporate/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#111C5A]/20 bg-white/50 px-6 py-4 text-sm font-semibold text-[#111C5A] backdrop-blur-sm transition-colors duration-300 hover:border-[#1565C0] hover:text-[#1565C0] lg:w-auto lg:bg-transparent lg:px-8 lg:backdrop-blur-none">
                   Contact Us
                 </Link>
               </motion.div>

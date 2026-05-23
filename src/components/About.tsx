@@ -60,7 +60,7 @@ export default function About() {
         <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-18">
           <div className="about-image relative min-h-[420px] overflow-hidden rounded-[8px] border border-[#0B3D78]/10 bg-white shadow-[0_28px_80px_rgba(11,61,120,0.14)]">
             <img
-              src="/images/manufacturing.png"
+              src="/images/Gemini_Generated_Image_27pts227pts227pt.png"
               alt="FasLift elevator safety manufacturing"
               className="h-full min-h-[420px] w-full object-cover object-center"
               draggable={false}

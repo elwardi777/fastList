@@ -34,19 +34,7 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
       viewport={{ once: true, amount: 0.2 }}
       className="group h-full"
     >
-      <div
-        className="relative flex h-full min-h-[360px] flex-col overflow-hidden rounded-[30px] border border-[#0B3D78]/20 bg-white/60 backdrop-blur-xl transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-2 hover:border-[#0B3D78]/45"
-        style={{
-          boxShadow:
-            '0 0 0 1px rgba(255,255,255,0.8), 0 24px 56px rgba(11,61,120,0.1), 0 8px 20px rgba(11,61,120,0.06)',
-        }}
-      >
-        <div
-          className="pointer-events-none absolute inset-0 rounded-[30px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-          style={{ boxShadow: 'inset 0 0 0 1px rgba(11,61,120,0.35), 0 0 36px rgba(11,61,120,0.12)' }}
-          aria-hidden
-        />
-
+      <div className="trusted-card relative flex h-full min-h-[360px] flex-col overflow-hidden rounded-[30px]">
         {/* Visual stage */}
         <div className="relative h-[140px] sm:h-[160px] overflow-hidden">
           <div
@@ -56,7 +44,7 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
           <img
             src={card.image}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-25 transition-transform duration-700 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-25 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:opacity-35"
             draggable={false}
             aria-hidden
           />
@@ -67,13 +55,13 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
 
           <div className="relative z-10 flex h-full items-center justify-center">
             <div
-              className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#DDE3EC] bg-white/85 backdrop-blur-md transition-all duration-500 group-hover:border-[#0B3D78]/35 group-hover:shadow-[0_0_28px_rgba(11,61,120,0.2)]"
+              className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#DDE3EC] bg-white/85 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:rotate-[6deg] group-hover:border-[#0B3D78]/10 group-hover:bg-[#0B3D78] group-hover:shadow-[0_12px_32px_rgba(11,61,120,0.15)]"
               style={{ boxShadow: '0 12px 32px rgba(11,61,120,0.08)' }}
             >
               <Icon
                 size={28}
                 strokeWidth={1.5}
-                className="text-[#0B3D78] transition-colors duration-400 group-hover:text-[#0B3D78]"
+                className="text-[#0B3D78] transition-colors duration-300 group-hover:text-white"
               />
             </div>
           </div>
@@ -98,7 +86,7 @@ function ReasonCardItem({ card, index }: { card: ReasonCard; index: number }) {
             {card.subtitle}
           </p>
 
-          <div className="mt-6 h-[3px] w-12 rounded-full bg-gradient-to-r from-[#0B3D78] to-[#0B3D78] transition-all duration-500 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(11,61,120,0.45)]" />
+          <div className="mt-6 h-[3.5px] w-12 rounded-full bg-gradient-to-r from-[#0B3D78] via-[#0B3D78] to-[#0B3D78] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full group-hover:from-[#0B3D78] group-hover:via-[#1565C0] group-hover:to-[#0B3D78] group-hover:shadow-[0_0_12px_rgba(21,101,192,0.5)]" />
         </div>
       </div>
     </motion.article>

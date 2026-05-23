@@ -34,16 +34,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
   const [lightPos, setLightPos] = React.useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = React.useState(false);
   const [direction, setDirection] = React.useState(0); // -1 left, 1 right
-  const [isDesktop, setIsDesktop] = React.useState(false);
 
-  React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const media = window.matchMedia('(min-width: 1024px)');
-    setIsDesktop(media.matches);
-    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, []);
 
   // ---- Refs ----
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -184,7 +175,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
   );
 
   // ---- Image transition variants ----
-  const isLargeImage = isDesktop && currentIndex > 0;
+  const isLargeImage = currentIndex > 0;
   const targetScale = isLargeImage ? 1.28 : 1.0;
   const enterExitScale = targetScale * 0.92;
 
@@ -226,10 +217,9 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
     >
       {/* --- Product image --- */}
       <div
-        className="relative w-full max-w-full flex items-center justify-center px-1"
+        className="relative w-full max-w-full flex items-center justify-center px-1 h-[280px] sm:h-[400px] md:h-[460px] lg:h-[500px]"
         style={{
           perspective: '1000px',
-          minHeight: '280px',
         }}
       >
         {/* Floating wrapper */}

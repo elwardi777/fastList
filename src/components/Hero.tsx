@@ -5,6 +5,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import ProductShowcase360 from './ProductShowcase360';
 
 // ---------------------------------------------------------------------------
@@ -123,23 +124,26 @@ const Hero: React.FC = () => {
             </motion.p>
 
             {/* CTA Button */}
-            <motion.a
-              href="#products"
-              variants={fadeUpVariants}
-              custom={1.2}
-              whileHover={{ scale: 1.06 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="cta-btn inline-flex items-center gap-2 bg-[#0B3D78] text-white font-semibold
-                         text-sm sm:text-base px-7 py-3.5 rounded-full
-                         shadow-[0_8px_0_rgba(0,0,0,0.18)]
-                         hover:shadow-[0_12px_4px_rgba(0,0,0,0.22)]
-                         active:shadow-[0_4px_0_rgba(0,0,0,0.18)]
-                         transition-shadow duration-200"
-            >
-              {t('hero.cta')}
-              <span className="text-lg leading-none">→</span>
-            </motion.a>
+            <div className="w-full flex justify-center lg:justify-start">
+              <Link to="/corporate/contact" className="inline-block">
+                <motion.button
+                  variants={fadeUpVariants}
+                  custom={1.2}
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="cta-btn inline-flex items-center gap-2 bg-[#0B3D78] text-white font-semibold
+                             text-sm sm:text-base px-7 py-3.5 rounded-full
+                             shadow-[0_8px_0_rgba(0,0,0,0.18)]
+                             hover:shadow-[0_12px_4px_rgba(0,0,0,0.22)]
+                             active:shadow-[0_4px_0_rgba(0,0,0,0.18)]
+                             transition-shadow duration-200 cursor-pointer"
+                >
+                  {t('hero.cta')}
+                  <span className="text-lg leading-none">→</span>
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
 
           {/* -------------------------------------------------------
