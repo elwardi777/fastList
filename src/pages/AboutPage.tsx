@@ -250,7 +250,8 @@ function TimelineSection() {
   const markReady = (i: number) =>
     setReadyCards(prev => { const next = [...prev]; next[i] = true; return next; });
 
-
+  const [mobileReadyCards, setMobileReadyCards] = useState<boolean[]>(() => TIMELINE.map(() => false));
+  const mobileTriggered = useRef<boolean[]>(TIMELINE.map(() => false));
 
   /* GSAP: elevator travels from top dot to bottom dot, scrubbed by scroll */
   useEffect(() => {
@@ -345,6 +346,7 @@ function TimelineSection() {
 
       const startY = -(imgH / 2);
       const endY = railH - (imgH / 2);
+      const totalItems = TIMELINE.length;
 
       ctx = gsap.context(() => {
         gsap.fromTo(mElev,
@@ -353,6 +355,24 @@ function TimelineSection() {
             y: endY, ease: 'none',
             scrollTrigger: {
               trigger: section, start: 'top top', end: 'bottom bottom', scrub: 1.8,
+              onUpdate: (self) => {
+                const p = self.progress;
+                TIMELINE.forEach((_, i) => {
+                  const dotP = i / (totalItems - 1);
+                  if (p >= dotP && !mobileTriggered.current[i]) {
+                    mobileTriggered.current[i] = true;
+                    setMobileReadyCards(prev => {
+                      const next = [...prev]; next[i] = true; return next;
+                    });
+                  }
+                  if (p < dotP && mobileTriggered.current[i]) {
+                    mobileTriggered.current[i] = false;
+                    setMobileReadyCards(prev => {
+                      const next = [...prev]; next[i] = false; return next;
+                    });
+                  }
+                });
+              },
             }
           }
         );
@@ -480,8 +500,8 @@ function TimelineSection() {
 
           {/* Cards — LEFT */}
           <div className="flex-1 flex flex-col">
-            {TIMELINE.map((item) => (
-              <MobileTimelineCard key={item.year} item={item} />
+            {TIMELINE.map((item, i) => (
+              <MobileTimelineCard key={item.year} item={item} cardReady={mobileReadyCards[i]} />
             ))}
           </div>
 
@@ -516,13 +536,12 @@ function TimelineSection() {
   );
 }
 
-function MobileTimelineCard({ item }: { item: { year: string; title: string; desc: string } }) {
+function MobileTimelineCard({ item, cardReady }: { item: { year: string; title: string; desc: string }; cardReady: boolean }) {
   return (
     <div style={{ minHeight: CARD_HEIGHT }} className="flex flex-col justify-center py-4">
       <motion.div
-        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        viewport={{ once: true, margin: '-60px' }}
+        initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
+        animate={cardReady ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="inline-block bg-[#0D1540] text-white font-['Poppins',sans-serif] font-black text-xs px-3 py-1 mb-2 skew-x-[-6deg]">
