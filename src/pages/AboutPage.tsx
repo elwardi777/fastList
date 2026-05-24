@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -11,23 +12,14 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollToTop from '../components/ScrollToTop';
 import FloatingToolbar from '../components/FloatingToolbar';
 import About from '../components/About';
-import TrustedStandardSection from '../components/TrustedStandardSection';
 
-/* ─── Timeline data ─────────────────────────────────── */
-const TIMELINE = [
-  { year: '2015', title: 'Company Founded', desc: 'FasLift Solutions was founded to create premium elevator safety technologies.' },
-  { year: '2016', title: 'First Production', desc: 'Started manufacturing precision speed governors and elevator braking systems.' },
-  { year: '2017', title: 'Expansion', desc: 'Expanded industrial production and quality testing operations.' },
-  { year: '2019', title: 'International Export', desc: 'Began exporting elevator safety components internationally.' },
-  { year: '2021', title: 'CNC Integration', desc: 'Integrated CNC manufacturing and advanced engineering systems.' },
-  { year: '2023', title: 'Smart Technology', desc: 'Developed next-generation smart overspeed governor technology.' },
-  { year: '2025', title: 'Global Brand', desc: 'FasLift Solutions becomes an international elevator safety solutions brand.' },
-];
+
 
 /* ══════════════════════════════════════════════════════
    ABOUT PAGE
 ══════════════════════════════════════════════════════ */
 export default function AboutPage() {
+  const { t } = useTranslation();
   return (
     <div className="font-['Inter',sans-serif] bg-white overflow-x-hidden">
       <Navbar />
@@ -50,7 +42,7 @@ export default function AboutPage() {
           />
           {/* Subtle grid pattern overlay */}
           <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
-            <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#111C5A" strokeWidth="1"/></pattern></defs>
+            <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#111C5A" strokeWidth="1" /></pattern></defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
           {/* Left-to-right gradient overlay to guarantee text readability */}
@@ -66,47 +58,48 @@ export default function AboutPage() {
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
                 className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#111C5A]/15 bg-white/75 px-4 py-2 backdrop-blur-sm lg:mb-6 lg:bg-white/70">
                 <span className="w-2 h-2 rounded-full bg-[#1565C0] animate-pulse" />
-                <span className="font-['JetBrains_Mono',monospace] text-[10px] font-semibold uppercase tracking-[0.18em] text-[#111C5A]/60 lg:text-[11px] lg:tracking-[0.2em]">About FasLift</span>
+                <span className="font-['JetBrains_Mono',monospace] text-[10px] font-semibold uppercase tracking-[0.18em] text-[#111C5A]/60 lg:text-[11px] lg:tracking-[0.2em]">{t('aboutPage.heroBadge')}</span>
               </motion.div>
               <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
                 className="mb-5 font-['Poppins',sans-serif] font-black leading-[1.0] text-[#0D1540] lg:mb-6 lg:tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.45rem, 13vw, 3rem)' }}>
                 <span className="hidden lg:inline" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
-                  ABOUT<br /><span className="text-[#0B3D78]">FASLIFT</span>
+                  {t('aboutPage.heroTitlePart1')}<br /><span className="text-[#0B3D78]">{t('aboutPage.heroTitlePart2')}</span>
                 </span>
                 <span className="lg:hidden">
-                ABOUT<br /><span className="text-[#0B3D78]">FASLIFT</span>
+                  {t('aboutPage.heroTitlePart1')}<br /><span className="text-[#0B3D78]">{t('aboutPage.heroTitlePart2')}</span>
                 </span>
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
                 className="mb-4 max-w-lg text-base leading-relaxed text-[#0D1540]/68 lg:text-lg lg:text-[#0D1540]/60">
-Engineering advanced Speed Governor solutions for safer transportation.              </motion.p>
+                {t('aboutPage.heroSubtitle1')}
+              </motion.p>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}
                 className="mb-8 max-w-md text-sm leading-7 text-[#0D1540]/58 lg:mb-10 lg:text-base lg:leading-relaxed lg:text-[#0D1540]/50">
-FAS LIST specializes in the development and supply of high-performance Speed Governor systems designed to enhance vehicle safety, control, and operational reliability. We provide smart speed limiting technologies and safety solutions for commercial vehicles, transport fleets, and industrial applications.              </motion.p>
+                {t('aboutPage.heroSubtitle2')}
+              </motion.p>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4">
                 <a href="#timeline" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#111C5A] px-6 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#1565C0] lg:w-auto lg:px-8">
-                  Explore History <ArrowRight size={16} />
+                  {t('aboutPage.btnExplore')} <ArrowRight size={16} />
                 </a>
                 <Link to="/corporate/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#111C5A]/20 bg-white/50 px-6 py-4 text-sm font-semibold text-[#111C5A] backdrop-blur-sm transition-colors duration-300 hover:border-[#1565C0] hover:text-[#1565C0] lg:w-auto lg:bg-transparent lg:px-8 lg:backdrop-blur-none">
-                  Contact Us
+                  {t('aboutPage.btnContact')}
                 </Link>
               </motion.div>
             </div>
 
             {/* ── RIGHT: Floating Glassmorphism Badge/Card ── */}
-          
+
           </div>
         </div>
         <motion.div className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-          <span className="text-[10px] tracking-[0.2em] uppercase text-[#111C5A]/30 font-['JetBrains_Mono',monospace]">Scroll</span>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-[#111C5A]/30 font-['JetBrains_Mono',monospace]">{t('aboutPage.scrollText')}</span>
           <div className="w-[1px] h-8 bg-gradient-to-b from-[#111C5A]/30 to-transparent" />
         </motion.div>
       </section>
 
       {/* ── INTRO / STATS ── */}
       <IntroSection />
-      <TrustedStandardSection />
 
       {/* ── HISTORY TIMELINE ── */}
       <TimelineSection />
@@ -125,7 +118,7 @@ FAS LIST specializes in the development and supply of high-performance Speed Gov
 ══════════════════════════════════════════════════════ */
 const CARD_HEIGHT = 220;
 const LINE_DURATION = 0.85;
-const DOT_DELAY    = LINE_DURATION + 0.1;
+const DOT_DELAY = LINE_DURATION + 0.1;
 
 function TimelineCard({
   item,
@@ -166,7 +159,7 @@ function RailConnector({
   const isInView = useInView(wrapRef, { once: true, margin: '-60px' });
   const topPct = (cardIndex / (totalCards - 1)) * 100;
   const reach = 320; // px — stops at card outer edge, not inside
-  const endX  = side === 'left' ? -reach : reach;
+  const endX = side === 'left' ? -reach : reach;
 
   return (
     <div ref={wrapRef} className="absolute" style={{ left: 'calc(50% - 3px)', top: `calc(${topPct}% - 1px)`, width: 1, height: 1 }}>
@@ -174,7 +167,7 @@ function RailConnector({
         <defs>
           <linearGradient id={`g-${side}-${cardIndex}`} gradientUnits="userSpaceOnUse"
             x1="0" y1="0" x2={String(endX)} y2="0">
-            <stop offset="0%"   stopColor="#1565C0" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#1565C0" stopOpacity="0.9" />
             <stop offset="100%" stopColor="#42a5f5" stopOpacity="0.15" />
           </linearGradient>
           <filter id={`gl-${side}-${cardIndex}`}>
@@ -225,23 +218,33 @@ function TimelineItem({
   cardReady: boolean;
 }) {
   return (
-    <div className={`relative flex flex-col min-h-[220px] py-10 overflow-hidden ${
-      side === 'left' ? 'items-end pr-6 text-right' : 'items-start pl-6 text-left'
-    }`}>
+    <div className={`relative flex flex-col min-h-[220px] py-10 overflow-hidden ${side === 'left' ? 'items-end pr-6 text-right' : 'items-start pl-6 text-left'
+      }`}>
       <TimelineCard item={item} side={side} cardReady={cardReady} />
     </div>
   );
 }
 
 function TimelineSection() {
-  const sectionRef     = useRef<HTMLDivElement>(null);
-  const railBodyRef    = useRef<HTMLDivElement>(null);
-  const elevatorRef    = useRef<HTMLDivElement>(null);
-  const fillLRef       = useRef<HTMLDivElement>(null);
-  const fillRRef       = useRef<HTMLDivElement>(null);
-  const mobileRailRef  = useRef<HTMLDivElement>(null);
-  const mobileElevRef  = useRef<HTMLDivElement>(null);
-  const mobileFillRef  = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
+  const TIMELINE = [
+    { year: '2015', title: t('aboutPage.timeline2015Title'), desc: t('aboutPage.timeline2015Desc') },
+    { year: '2016', title: t('aboutPage.timeline2016Title'), desc: t('aboutPage.timeline2016Desc') },
+    { year: '2017', title: t('aboutPage.timeline2017Title'), desc: t('aboutPage.timeline2017Desc') },
+    { year: '2019', title: t('aboutPage.timeline2019Title'), desc: t('aboutPage.timeline2019Desc') },
+    { year: '2021', title: t('aboutPage.timeline2021Title'), desc: t('aboutPage.timeline2021Desc') },
+    { year: '2023', title: t('aboutPage.timeline2023Title'), desc: t('aboutPage.timeline2023Desc') },
+    { year: '2025', title: t('aboutPage.timeline2025Title'), desc: t('aboutPage.timeline2025Desc') },
+  ];
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const railBodyRef = useRef<HTMLDivElement>(null);
+  const elevatorRef = useRef<HTMLDivElement>(null);
+  const fillLRef = useRef<HTMLDivElement>(null);
+  const fillRRef = useRef<HTMLDivElement>(null);
+  const mobileRailRef = useRef<HTMLDivElement>(null);
+  const mobileElevRef = useRef<HTMLDivElement>(null);
+  const mobileFillRef = useRef<HTMLDivElement>(null);
 
   const [readyCards, setReadyCards] = useState<boolean[]>(() => TIMELINE.map(() => false));
   const markReady = (i: number) =>
@@ -252,21 +255,21 @@ function TimelineSection() {
 
   /* GSAP: elevator travels from top dot to bottom dot, scrubbed by scroll */
   useEffect(() => {
-    const section  = sectionRef.current;
-    const body     = railBodyRef.current;
+    const section = sectionRef.current;
+    const body = railBodyRef.current;
     const elevator = elevatorRef.current;
-    const fillL    = fillLRef.current;
-    const fillR    = fillRRef.current;
+    const fillL = fillLRef.current;
+    const fillR = fillRRef.current;
     if (!section || !body || !elevator) return;
 
     // Measure the actual rendered height of the center column (rail container)
-    const centerCol   = elevator.parentElement as HTMLElement;
-    const railH       = centerCol.offsetHeight;              // total rail pixel height
-    const imgH        = elevator.offsetHeight;               // elevator image height
+    const centerCol = elevator.parentElement as HTMLElement;
+    const railH = centerCol.offsetHeight;              // total rail pixel height
+    const imgH = elevator.offsetHeight;               // elevator image height
     // First dot is at top:0, last dot is at top:100% of centerCol
     // We want elevator CENTER on each dot → offset by half image height
-    const startY      = -(imgH / 2);                        // center of image on first dot (top:0)
-    const endY        = railH - (imgH / 2);                 // center of image on last dot (top:100%)
+    const startY = -(imgH / 2);                        // center of image on first dot (top:0)
+    const endY = railH - (imgH / 2);                 // center of image on last dot (top:100%)
 
     const ctx = gsap.context(() => {
       /* Elevator scrub */
@@ -329,26 +332,27 @@ function TimelineSection() {
   /* GSAP — mobile elevator (deferred so DOM is painted and offsetHeight is real) */
   useEffect(() => {
     const section = sectionRef.current;
-    const mRail   = mobileRailRef.current;
-    const mElev   = mobileElevRef.current;
-    const mFill   = mobileFillRef.current;
+    const mRail = mobileRailRef.current;
+    const mElev = mobileElevRef.current;
+    const mFill = mobileFillRef.current;
     if (!section || !mRail || !mElev) return;
 
     let ctx: ReturnType<typeof gsap.context>;
 
     const init = () => {
       const railH = mRail.offsetHeight;
-      const imgH  = mElev.offsetHeight;
+      const imgH = mElev.offsetHeight;
       if (railH === 0 || imgH === 0) return; // not visible yet (desktop)
 
       const startY = -(imgH / 2);
-      const endY   = railH - (imgH / 2);
+      const endY = railH - (imgH / 2);
       const totalItems = TIMELINE.length;
 
       ctx = gsap.context(() => {
         gsap.fromTo(mElev,
           { y: startY },
-          { y: endY, ease: 'none',
+          {
+            y: endY, ease: 'none',
             scrollTrigger: {
               trigger: section, start: 'top top', end: 'bottom bottom', scrub: 1.8,
               onUpdate: (self) => {
@@ -376,8 +380,10 @@ function TimelineSection() {
         );
         if (mFill) gsap.fromTo(mFill,
           { scaleY: 0 },
-          { scaleY: 1, ease: 'none', transformOrigin: 'top center',
-            scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom', scrub: 0.5 } }
+          {
+            scaleY: 1, ease: 'none', transformOrigin: 'top center',
+            scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom', scrub: 0.5 }
+          }
         );
       }, section);
     };
@@ -397,11 +403,11 @@ function TimelineSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 mb-32 text-center z-[10]">
         <div className="inline-flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px] bg-[#1565C0]" />
-          <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">Our History</span>
+          <span className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] uppercase text-[#111C5A]/40">{t('aboutPage.timelineSectionBadge')}</span>
           <div className="w-8 h-[2px] bg-[#1565C0]" />
         </div>
         <h2 className="font-['Poppins',sans-serif] font-black text-[#0D1540]" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
-          A Decade of <span className="text-[#1565C0]">Innovation</span>
+          {t('aboutPage.timelineSectionHeading')}
         </h2>
       </div>
 
@@ -507,8 +513,10 @@ function TimelineSection() {
               style={{ top: 0, left: '50%', transform: 'translateX(-50%)', width: '200px' }}
             >
               <img src="/images/manufacturing.png" alt="FasLift Elevator"
-                style={{ display: 'block', width: '100%', height: 'auto',
-                  filter: 'drop-shadow(0 6px 16px rgba(17,28,90,0.3))' }}
+                style={{
+                  display: 'block', width: '100%', height: 'auto',
+                  filter: 'drop-shadow(0 6px 16px rgba(17,28,90,0.3))'
+                }}
               />
             </div>
           </div>

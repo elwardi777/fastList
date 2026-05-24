@@ -2,9 +2,12 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { useTranslation } from 'react-i18next';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
 
@@ -76,23 +79,25 @@ export default function About() {
             <div className="about-reveal mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#0B3D78]" />
               <span className="font-['JetBrains_Mono',monospace] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0B3D78]/55">
-                Who We Are
+                {t('about.whoWeAre')}
               </span>
             </div>
 
             <h2 className="about-reveal mb-7 max-w-3xl font-['Inter',sans-serif] font-black leading-[1.02] text-[#0B3D78]">
-              <span className="block text-[clamp(2.25rem,5vw,4.7rem)]">Precision Manufacturing</span>
-              <span className="block text-[clamp(2.25rem,5vw,4.7rem)] text-[#0B3D78]">for Elevator Safety</span>
+              <span className="block text-[clamp(2.25rem,5vw,4.7rem)]">{t('about.headingPart1')}</span>
+              <span className="block text-[clamp(2.25rem,5vw,4.7rem)] text-[#0B3D78]">{t('about.headingPart2')}</span>
             </h2>
 
             <div className="space-y-5 text-[15.5px] leading-8 text-[#0B3D78]/72 md:text-base">
               <p className="about-reveal">
-At FAS LIST, we specialize in providing high-quality Speed Governor solutions designed to improve road safety, vehicle control, and fleet management. Our mission is to deliver reliable and advanced speed limiting systems that help businesses and drivers maintain safe driving standards while complying with transportation regulations.
-
-We work with trusted technology and durable equipment to ensure performance, accuracy, and long-term reliability. Whether for commercial vehicles, transport companies, or private fleets, FAS LIST is committed to offering professional service, technical support, and innovative solutions tailored to our customers’ needs.
-
-With a strong focus on safety, quality, and customer satisfaction, FAS LIST continues to build trusted relationships with clients looking for dependable Speed Governor systems.              </p>
-             
+                {t('about.descParagraph1')}
+              </p>
+              <p className="about-reveal">
+                {t('about.descParagraph2')}
+              </p>
+              <p className="about-reveal">
+                {t('about.descParagraph3')}
+              </p>
             </div>
           </div>
         </div>

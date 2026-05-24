@@ -25,14 +25,13 @@ function useNavGroups(): NavGroup[] {
       links: [
         { label: t('nav.aboutUs'), href: '/about' },
         { label: t('nav.production'), href: '/corporate/production' },
-        { label: t('nav.career'), href: '/corporate/career' },
       ],
     },
     {
       title: t('nav.mediaCenter'),
       links: [
+        { label: t('nav.gallery'), href: '/media/gallery' },
         { label: t('nav.eCatalog'), href: '/catalog' },
-        { label: t('nav.newsExhibitions'), href: '/media/news' },
       ],
     },
     {
@@ -46,8 +45,8 @@ function useNavGroups(): NavGroup[] {
 }
 
 const LANGUAGES = [
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' },
+  { code: 'en', labelKey: 'nav.langEn' },
+  { code: 'fr', labelKey: 'nav.langFr' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -104,7 +103,7 @@ function DesktopDropdown({ group, scrolled, forceDark }: { group: NavGroup; scro
 /* ------------------------------------------------------------------ */
 
 function LanguageSelector({ scrolled, forceDark }: { scrolled: boolean; forceDark?: boolean }) {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const currentLang = i18n.language?.startsWith('fr') ? 'fr' : 'en'
   const isLight = !scrolled && !forceDark;
 
@@ -151,7 +150,7 @@ function LanguageSelector({ scrolled, forceDark }: { scrolled: boolean; forceDar
             >
               {lang.code.toUpperCase()}
               <span className="text-[11px] text-white/40 font-['Inter',sans-serif]">
-                {lang.label}
+                {t(lang.labelKey)}
               </span>
             </button>
           ))}
@@ -166,13 +165,13 @@ function LanguageSelector({ scrolled, forceDark }: { scrolled: boolean; forceDar
 /* ------------------------------------------------------------------ */
 
 function MobileLangSelector() {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const currentLang = i18n.language?.startsWith('fr') ? 'fr' : 'en'
 
   return (
     <div className="mt-8">
       <p className="mb-3 text-[11px] uppercase tracking-[0.12em] text-white/40 font-['JetBrains_Mono',monospace]">
-        Language
+        {t('nav.language')}
       </p>
       <div className="flex gap-3">
         {LANGUAGES.map((lang) => (

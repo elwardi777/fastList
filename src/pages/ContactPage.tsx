@@ -69,7 +69,7 @@ export default function ContactPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-3 text-base text-[#0B3D78]/70 max-w-md md:max-w-lg"
             >
-              Have questions about our speed governors or elevator safety systems? Our engineering team is here to assist you.
+              {t('contact.heroSubtitle')}
             </motion.p>
           </div>
         </div>

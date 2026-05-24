@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -27,6 +28,7 @@ const MAX_TILT_DEG = 14;
 // Component
 // ---------------------------------------------------------------------------
 const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' }) => {
+  const { t } = useTranslation();
   // ---- State ----
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isDragging, setIsDragging] = React.useState(false);
@@ -284,7 +286,7 @@ const ProductShowcase360: React.FC<ProductShowcase360Props> = ({ className = '' 
 
       {/* --- Hint label --- */}
       <p className="text-calibration mt-1 tracking-[0.15em]">
-        DRAG TO ROTATE
+        {t('products.dragRotate')}
       </p>
     </div>
   );

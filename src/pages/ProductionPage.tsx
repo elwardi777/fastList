@@ -20,6 +20,14 @@ const IMAGES = [
   {
     src: '/images/quality_control.png',
     key: 'sliderQc'
+  },
+  {
+    src: '/images/factory_cnc_precision.png',
+    key: 'sliderQc'
+  },
+  {
+    src: '/images/category-governors.png',
+    key: 'sliderQc'
   }
 ];
 
@@ -52,7 +60,7 @@ export default function ProductionPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/Gemini_Generated_Image_6gzqlo6gzqlo6gzq.png"
+            src="/images/production_hero_bg.png"
             alt="FasLift Production Facility"
             className="h-full w-full object-cover object-center"
           />
@@ -64,7 +72,7 @@ export default function ProductionPage() {
 
         {/* Grid pattern overlay */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-[1]" xmlns="http://www.w3.org/2000/svg">
-          <defs><pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" strokeWidth="1"/></pattern></defs>
+          <defs><pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" strokeWidth="1" /></pattern></defs>
           <rect width="100%" height="100%" fill="url(#hero-grid)" />
         </svg>
 
@@ -110,7 +118,7 @@ export default function ProductionPage() {
         <div className="max-w-7xl mx-auto">
           {/* Split Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Column: Typography Block */}
             <div className="lg:col-span-5 space-y-8">
               {/* Monospace section heading */}
@@ -249,9 +257,8 @@ export default function ProductionPage() {
                     <button
                       key={index}
                       onClick={() => setActiveSlide(index)}
-                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                        activeSlide === index ? 'w-8 bg-[#0b3d78]' : 'w-2 bg-[#0b3d78]/20'
-                      }`}
+                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeSlide === index ? 'w-8 bg-[#0b3d78]' : 'w-2 bg-[#0b3d78]/20'
+                        }`}
                     />
                   ))}
                 </div>
@@ -263,51 +270,7 @@ export default function ProductionPage() {
       </section>
 
       {/* ── SECTION 2: PRODUCTION PROCESS STEPS ── */}
-      <section className="relative py-24 px-6 md:px-12 bg-[#0B3D78] overflow-hidden border-t border-b border-[#0d2b5e]/10">
-        {/* Diagonal hatch pattern overlay */}
-        <div className="absolute inset-0 hatch-pattern pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Section heading */}
-          <div className="flex items-center gap-3 mb-16">
-            <div className="w-6 h-[2px] bg-white/30" />
-            <span className="font-mono text-xs tracking-[0.15em] uppercase text-white/50">
-              {t('production.heading')}
-            </span>
-          </div>
-
-          {/* Grid Layout of steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map(step => (
-              <motion.div
-                key={step}
-                className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[24px] relative overflow-hidden transition-all duration-300 hover:-translate-y-[6px]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.5, delay: step * 0.05 }}
-              >
-                {/* Step indicator */}
-                <span className="absolute top-6 right-8 font-mono font-bold text-5xl text-white/5 select-none">
-                  {String(step).padStart(2, '0')}
-                </span>
-
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white font-mono font-bold text-sm mb-6">
-                  {step}
-                </div>
-
-                <h3 className="font-bold text-lg text-white mb-2 leading-tight">
-                  {t(`production.step${step}Title`)}
-                </h3>
-
-                <p className="text-xs text-white/70 leading-relaxed">
-                  {t(`production.step${step}Desc`)}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── FOOTER & UTILITIES ── */}
       <Footer />
