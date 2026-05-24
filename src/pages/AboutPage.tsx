@@ -250,8 +250,7 @@ function TimelineSection() {
   const markReady = (i: number) =>
     setReadyCards(prev => { const next = [...prev]; next[i] = true; return next; });
 
-  const [mobileReadyCards, setMobileReadyCards] = useState<boolean[]>(() => TIMELINE.map(() => false));
-  const mobileTriggered = useRef<boolean[]>(TIMELINE.map(() => false));
+
 
   /* GSAP: elevator travels from top dot to bottom dot, scrubbed by scroll */
   useEffect(() => {
@@ -341,46 +340,25 @@ function TimelineSection() {
 
     const init = () => {
       const railH = mRail.offsetHeight;
-      const imgH = mElev.offsetHeight;
-      if (railH === 0 || imgH === 0) return; // not visible yet (desktop)
+      const imgH = mElev.offsetHeight || 120; // fallback if image not fully loaded yet
+      if (railH === 0) return; // not visible yet (desktop)
 
       const startY = -(imgH / 2);
       const endY = railH - (imgH / 2);
-      const totalItems = TIMELINE.length;
 
       ctx = gsap.context(() => {
         gsap.fromTo(mElev,
           { y: startY },
-          {
+          { 
             y: endY, ease: 'none',
             scrollTrigger: {
               trigger: section, start: 'top top', end: 'bottom bottom', scrub: 1.8,
-              onUpdate: (self) => {
-                // progress 0→1 maps elevator center from dot[0] to dot[last]
-                const p = self.progress;
-                TIMELINE.forEach((_, i) => {
-                  const dotP = i / (totalItems - 1); // progress at which elevator center is on dot i
-                  if (p >= dotP && !mobileTriggered.current[i]) {
-                    mobileTriggered.current[i] = true;
-                    setMobileReadyCards(prev => {
-                      const next = [...prev]; next[i] = true; return next;
-                    });
-                  }
-                  // reset when scrolling back up
-                  if (p < dotP && mobileTriggered.current[i]) {
-                    mobileTriggered.current[i] = false;
-                    setMobileReadyCards(prev => {
-                      const next = [...prev]; next[i] = false; return next;
-                    });
-                  }
-                });
-              },
             }
           }
         );
         if (mFill) gsap.fromTo(mFill,
           { scaleY: 0 },
-          {
+          { 
             scaleY: 1, ease: 'none', transformOrigin: 'top center',
             scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom', scrub: 0.5 }
           }
@@ -391,8 +369,18 @@ function TimelineSection() {
     // Run after two animation frames to ensure layout is complete
     const raf = requestAnimationFrame(() => requestAnimationFrame(init));
 
+    // Trigger GSAP refresh on load & resize to ensure correct heights are computed
+    const handleRefresh = () => {
+      if (ctx) ctx.revert();
+      init();
+    };
+    window.addEventListener('load', handleRefresh);
+    window.addEventListener('resize', handleRefresh);
+
     return () => {
       cancelAnimationFrame(raf);
+      window.removeEventListener('load', handleRefresh);
+      window.removeEventListener('resize', handleRefresh);
       ctx?.revert();
     };
   }, []);
@@ -492,8 +480,8 @@ function TimelineSection() {
 
           {/* Cards — LEFT */}
           <div className="flex-1 flex flex-col">
-            {TIMELINE.map((item, i) => (
-              <MobileTimelineCard key={item.year} item={item} cardReady={mobileReadyCards[i]} />
+            {TIMELINE.map((item) => (
+              <MobileTimelineCard key={item.year} item={item} />
             ))}
           </div>
 
@@ -528,12 +516,13 @@ function TimelineSection() {
   );
 }
 
-function MobileTimelineCard({ item, cardReady }: { item: { year: string; title: string; desc: string }; cardReady: boolean }) {
+function MobileTimelineCard({ item }: { item: { year: string; title: string; desc: string } }) {
   return (
     <div style={{ minHeight: CARD_HEIGHT }} className="flex flex-col justify-center py-4">
       <motion.div
-        initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
-        animate={cardReady ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="inline-block bg-[#0D1540] text-white font-['Poppins',sans-serif] font-black text-xs px-3 py-1 mb-2 skew-x-[-6deg]">
