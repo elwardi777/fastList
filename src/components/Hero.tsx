@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import ProductShowcase360 from './ProductShowcase360';
+import ModelViewer3D from './ModelViewer3D';
 
 // ---------------------------------------------------------------------------
 // Animation variants
@@ -57,10 +53,6 @@ const Hero: React.FC = () => {
   ];
   const sectionRef = React.useRef<HTMLElement>(null);
 
-  // Parallax for the isometric grid
-  const { scrollY } = useScroll();
-  const gridY = useTransform(scrollY, [0, 1000], [0, 300]); // 0.3× speed
-
   return (
     <section
       ref={sectionRef}
@@ -69,14 +61,14 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:bg-[length:100%_auto] lg:bg-top hero-bg-desktop"
         style={{
-          backgroundImage: "url('/images/ChatGPT Image 22 mai 2026, 23_23_26.png')",
+          backgroundImage: "url('/images/hero-bg-mobile.jpg')",
           backgroundRepeat: 'no-repeat',
         }}
       >
         <style>{`
           @media (min-width: 1024px) {
             .hero-bg-desktop {
-              background-image: url('/images/Gemini_Generated_Image_bkv7n3bkv7n3bkv7.png') !important;
+              background-image: url('/images/hero-bg-desktop.jpg') !important;
             }
           }
         `}</style>
@@ -85,13 +77,13 @@ const Hero: React.FC = () => {
       {/* =========================================================
           CONTENT WRAPPER
           ========================================================= */}
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16 pt-32 sm:pt-40 pb-16 lg:py-0">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16 pt-32 sm:pt-40 pb-16 lg:pt-20 lg:pb-12 lg:-mt-16">
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12 lg:gap-4">
           {/* -------------------------------------------------------
-              LEFT SIDE — Text Content  (≈45%)
+              LEFT SIDE — Text Content  (≈52%)
               ------------------------------------------------------- */}
           <motion.div
-            className="w-full lg:w-[45%] flex flex-col items-start"
+            className="w-full lg:w-[52%] flex flex-col items-start"
             initial="hidden"
             animate="visible"
           >
@@ -106,7 +98,7 @@ const Hero: React.FC = () => {
                   className="font-['Inter',sans-serif] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0B3D78]"
                   style={{
                     opacity: line.opacity,
-                    fontSize: 'clamp(2.25rem, 5vw, 4rem)', // 36px → 64px
+                    fontSize: 'clamp(2rem, 4.5vw, 3.75rem)', // 32px → 60px
                   }}
                 >
                   {line.text}
@@ -147,26 +139,16 @@ const Hero: React.FC = () => {
           </motion.div>
 
           {/* -------------------------------------------------------
-              RIGHT SIDE — Product Showcase  (≈55%)
+              RIGHT SIDE — Interactive 3D Model  (≈48%)
               ------------------------------------------------------- */}
           <motion.div
-            className="relative w-full max-w-full overflow-hidden lg:w-[55%] flex items-center justify-center"
+            className="relative w-full max-w-full overflow-hidden lg:w-[48%] flex items-center justify-center"
             variants={showcaseVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Isometric grid overlay with parallax + drift */}
-            <motion.div
-              className="absolute inset-0 iso-grid-light pointer-events-none"
-              style={{
-                y: gridY,
-                animation: 'grid-drift 60s linear infinite',
-                willChange: 'transform',
-              }}
-            />
-
-            {/* Product showcase */}
-            <ProductShowcase360 className="relative z-10 w-full py-8 mt-16" />
+            {/* 3D Model Viewer */}
+            <ModelViewer3D className="relative z-10 w-full h-[320px] sm:h-[420px] md:h-[480px] lg:h-[540px] mt-8 lg:mt-0" />
           </motion.div>
         </div>
       </div>

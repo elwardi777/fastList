@@ -20,7 +20,7 @@ const fr = {
   hero: {
     line1: 'LE FABRICANT',
     line2: 'DE SÉCURITÉ',
-    line3: 'ASCENSEURS DE CONFIANCE',
+    line3: "D'ASCENSEURS",
     subtitle:
       'FasLift Solutions fabrique des limiteurs de vitesse et des systèmes de sécurité pour ascenseurs de haute performance pour les infrastructures de transport vertical modernes.',
     cta: 'JE SOUHAITE OBTENIR DEVIS',
