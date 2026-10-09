@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://fas-lift.com/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/" />
+  </url>
+
+  <!-- Products: Overspeed Governors -->
+  <url>
+    <loc>https://fas-lift.com/products/overspeed-governors</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/products/overspeed-governors?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/products/overspeed-governors?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/products/overspeed-governors?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/products/overspeed-governors" />
+  </url>
+
+  <!-- Products: Tensioner Pulley -->
+  <url>
+    <loc>https://fas-lift.com/products/tensioner-pulley</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/products/tensioner-pulley?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/products/tensioner-pulley?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/products/tensioner-pulley?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/products/tensioner-pulley" />
+  </url>
+
+  <!-- Products: Pulleys -->
+  <url>
+    <loc>https://fas-lift.com/products/pulleys</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/products/pulleys?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/products/pulleys?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/products/pulleys?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/products/pulleys" />
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://fas-lift.com/about</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/about?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/about?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/about?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/about" />
+  </url>
+
+  <!-- Catalog -->
+  <url>
+    <loc>https://fas-lift.com/catalog</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/catalog?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/catalog?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/catalog?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/catalog" />
+  </url>
+
+  <!-- Production -->
+  <url>
+    <loc>https://fas-lift.com/corporate/production</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/corporate/production?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/corporate/production?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/corporate/production?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/corporate/production" />
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://fas-lift.com/corporate/contact</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/corporate/contact?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/corporate/contact?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/corporate/contact?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/corporate/contact" />
+  </url>
+
+  <!-- Support -->
+  <url>
+    <loc>https://fas-lift.com/support</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/support?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/support?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/support?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/support" />
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://fas-lift.com/media/gallery</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/media/gallery?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/media/gallery?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/media/gallery?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/media/gallery" />
+  </url>
+
+  <!-- Order Form -->
+  <url>
+    <loc>https://fas-lift.com/order-form</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fas-lift.com/order-form?lng=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fas-lift.com/order-form?lng=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fas-lift.com/order-form?lng=tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas-lift.com/order-form" />
+  </url>
+</urlset>
