@@ -31,7 +31,7 @@ const fr = {
     line2: 'DE SÉCURITÉ',
     line3: "D'ASCENSEURS",
     subtitle:
-      'FasLift Solutions fabrique des limiteurs de vitesse et des systèmes de sécurité pour ascenseurs de haute performance pour les infrastructures de transport vertical modernes.',
+      'FasLift fabrique des limiteurs de vitesse et des systèmes de sécurité pour ascenseurs de haute performance pour les infrastructures de transport vertical modernes.',
     cta: 'DEMANDER UN DEVIS',
     secondaryCta: 'VOIR LES DÉTAILS TECHNIQUES',
     badge: 'SYSTÈMES DE SÉCURITÉ INDUSTRIELS',
@@ -71,7 +71,7 @@ const fr = {
   about: {
     title: 'CONÇU POUR LES INFRASTRUCTURES CRITIQUES',
     subtitle: 'Fiabilité et performance dans le transport vertical',
-    body: "Depuis sa création, FasLift Solutions s’est rapidement imposée comme un acteur majeur dans la fabrication de systèmes de sécurité pour ascenseurs. Nos limiteurs de vitesse, parachutes et systèmes de freinage protègent des millions de passagers chaque jour sur plusieurs continents. Chaque composant quittant notre usine est soumis à des tests rigoureux dépassant les normes internationales EN 81 — car dans le transport vertical, il n’y a pas de place pour le compromis.",
+    body: "Depuis sa création, FasLift s’est rapidement imposée comme un acteur majeur dans la fabrication de systèmes de sécurité pour ascenseurs. Nos limiteurs de vitesse, parachutes et systèmes de freinage protègent des millions de passagers chaque jour sur plusieurs continents. Chaque composant quittant notre usine est soumis à des tests rigoureux dépassant les normes internationales EN 81 — car dans le transport vertical, il n’y a pas de place pour le compromis.",
     years: 'Ans',
     products: 'Produits',
     countries: 'Pays',
@@ -87,7 +87,7 @@ const fr = {
   precision: {
     subtitle: 'Fiable dans le Monde Entier',
     heading: 'LIMITEUR DE VITESSE',
-    body: " Depuis sa création, FasLift Solutions s’est rapidement imposée comme un acteur majeur dans la fabrication de systèmes de sécurité pour ascenseurs. Nos limiteurs de vitesse, parachutes et systèmes de freinage protègent des millions de passagers chaque jour sur plusieurs continents. Chaque composant quittant notre usine est soumis à des tests rigoureux dépassant les normes internationales EN 81 — car dans le transport vertical, il n’y a pas de place pour le compromis.",
+    body: " Depuis sa création, FasLift s’est rapidement imposée comme un acteur majeur dans la fabrication de systèmes de sécurité pour ascenseurs. Nos limiteurs de vitesse, parachutes et systèmes de freinage protègent des millions de passagers chaque jour sur plusieurs continents. Chaque composant quittant notre usine est soumis à des tests rigoureux dépassant les normes internationales EN 81 — car dans le transport vertical, il n’y a pas de place pour le compromis.",
   },
   trusted: {
     badge: 'Limiteurs de vitesse FAS LIFT',
@@ -134,8 +134,8 @@ const fr = {
       "Composants de sécurité pour ascenseurs de précision. Limiteurs de vitesse et systèmes de sécurité de référence, fabriqués selon les normes internationales les plus strictes.",
     quickLinks: 'Liens Rapides',
     contact: 'Contact',
-    rights: '© 2021 FasLift Solutions. Tous droits réservés.',
-    taglineTitle: 'FAS LIFT SOLUTIONS',
+    rights: '© 2021 FasLift. Tous droits réservés.',
+    taglineTitle: 'FAS LIFT',
     taglineDesc: 'Solutions avancées de limiteurs de vitesse et de sécurité pour ascenseurs.',
     products: 'Produits',
     about: 'À Propos',
@@ -150,7 +150,7 @@ const fr = {
     address: 'Ikitelli OSB, Zone Industrielle Aykosan\n34490 Basaksehir/Istanbul, Turquie',
     phoneLabel: 'Tél',
     emailLabel: 'E-mail',
-    logoAlt: 'Logo FasLift Solutions',
+    logoAlt: 'Logo FasLift',
     businessCardQrAlt: 'Code QR de la carte de visite FAS LIFT',
   },
   media: {
@@ -216,7 +216,7 @@ const fr = {
     breadcrumbCurrent: 'Production',
     sectionTitle: 'FABRICATION DE POINTE',
     sectionSubtitle: 'Comment Nous Construisons la Sécurité',
-    descParagraph1: 'Chez FasLift Solutions, nos lignes de production allient automatisation de pointe et savoir-faire expert. Chaque limiteur de vitesse et parachute de sécurité est fabriqué en interne selon des normes de qualité strictes.',
+    descParagraph1: 'Chez FasLift, nos lignes de production allient automatisation de pointe et savoir-faire expert. Chaque limiteur de vitesse et parachute de sécurité est fabriqué en interne selon des normes de qualité strictes.',
     descParagraph2: 'De l\'usinage CNC au niveau du micron aux tests de charge électronique multi-étapes, nous veillons à ce que chaque système quittant notre usine soit entièrement fiable et conforme aux normes de sécurité internationales EN 81.',
     feature1Title: 'Fraisage CNC Haute Précision',
     feature1Desc: 'Usinage avancé assisté par ordinateur sur plusieurs axes pour une géométrie parfaite.',
@@ -323,7 +323,7 @@ const fr = {
     timelineSectionBadge: 'Notre Histoire',
     timelineSectionHeading: 'Une décennie d\'innovation',
     timeline2015Title: 'Fondation de l\'entreprise',
-    timeline2015Desc: 'FasLift Solutions a été fondée pour créer des technologies de sécurité haut de gamme pour ascenseurs.',
+    timeline2015Desc: 'FasLift a été fondée pour créer des technologies de sécurité haut de gamme pour ascenseurs.',
     timeline2016Title: 'Première production',
     timeline2016Desc: 'Début de la fabrication de limiteurs de vitesse de précision et de systèmes de freinage pour ascenseurs.',
     timeline2017Title: 'Expansion',
@@ -335,7 +335,7 @@ const fr = {
     timeline2023Title: 'Technologie intelligente',
     timeline2023Desc: 'Développement de la technologie de limiteur de vitesse intelligent de nouvelle génération.',
     timeline2025Title: 'Marque mondiale',
-    timeline2025Desc: 'FasLift Solutions devient une marque internationale de solutions de sécurité pour ascenseurs.',
+    timeline2025Desc: 'FasLift devient une marque internationale de solutions de sécurité pour ascenseurs.',
     altCompanyBuilding: 'Bâtiment de l\'entreprise FAS LIFT',
     altWorldwide: 'Présence mondiale de FAS LIFT',
     altManufacturing: 'Ligne de fabrication',
@@ -460,7 +460,7 @@ const fr = {
     orderFormButton: 'Télécharger le formulaire',
     orderFormTooltip: 'Ouvrir le formulaire de commande du limiteur de vitesse en PDF',
     precisionImageAlt: 'Limiteur de vitesse FAS LIFT',
-    precisionLogoAlt: 'FAS LIFT Solutions',
+    precisionLogoAlt: 'FAS LIFT',
     weightPrev: 'Contrepoids précédent',
     weightNext: 'Contrepoids suivant',
     weightDot: 'Contrepoids {{number}}',
@@ -696,50 +696,50 @@ const fr = {
   seo: {
     home: {
       title: 'FasLift — Site Officiel | Solutions de Sécurité pour Ascenseurs',
-      description: 'FasLift (FasLift Solutions) - Site officiel. Fabricant de limiteurs de vitesse et de composants de sécurité haut de gamme pour ascenseurs, certifiés selon la norme EN 81-20/50.',
+      description: 'FasLift - Site officiel. Fabricant de limiteurs de vitesse et de composants de sécurité haut de gamme pour ascenseurs, certifiés selon la norme EN 81-20/50.',
     },
     about: {
-      title: 'À Propos de Nous — FasLift Solutions',
-      description: 'Découvrez l\'histoire, la vision et les normes de sécurité de haute précision pour ascenseurs de FasLift Solutions.',
+      title: 'À Propos de Nous — FasLift',
+      description: 'Découvrez l\'histoire, la vision et les normes de sécurité de haute précision pour ascenseurs de FasLift.',
     },
     catalog: {
-      title: 'Catalogue de Produits & Documents — FasLift Solutions',
+      title: 'Catalogue de Produits & Documents — FasLift',
       description: 'Consultez et téléchargez les derniers catalogues techniques, brochures et certificats pour les limiteurs de vitesse FasLift.',
     },
     contact: {
-      title: 'Contactez-nous — FasLift Solutions',
+      title: 'Contactez-nous — FasLift',
       description: 'Prenez contact avec notre équipe d\'ingénieurs experts pour des devis de systèmes de sécurité d\'ascenseurs et des demandes techniques.',
     },
     support: {
-      title: 'Assistance Technique — FasLift Solutions',
+      title: 'Assistance Technique — FasLift',
       description: 'Diagnostics d\'experts, guides de maintenance, configuration du câblage et assistance pour les pièces de rechange d\'origine FasLift.',
     },
     production: {
-      title: 'Processus de Fabrication de Précision — FasLift Solutions',
+      title: 'Processus de Fabrication de Précision — FasLift',
       description: 'Découvrez notre usinage CNC de haute précision, nos lignes d\'assemblage robotisées et nos protocoles de contrôle qualité.',
     },
     gallery: {
-      title: 'Galerie de Produits & Médias — FasLift Solutions',
+      title: 'Galerie de Produits & Médias — FasLift',
       description: 'Parcourez des photographies haute résolution et des détails d\'ingénierie des composants de sécurité pour ascenseurs FasLift.',
     },
     governor: {
-      title: 'Limiteurs de Vitesse — FasLift Solutions',
+      title: 'Limiteurs de Vitesse — FasLift',
       description: 'Limiteurs de vitesse monodirectionnels et bidirectionnels FS-01 certifiés par TÜV SÜD selon la norme EN 81-20/50.',
     },
     tensionerPulley: {
-      title: 'Poulie Tensorielle — FasLift Solutions',
+      title: 'Poulie Tensorielle — FasLift',
       description: 'Systèmes de poulies tensorielles pour ascenseurs de haute précision conçus pour un tensionnement fiable des câbles et la conformité aux normes EN 81.',
     },
     pulleys: {
-      title: 'Poulies — FasLift Solutions',
+      title: 'Poulies — FasLift',
       description: 'Poulies d\'ascenseur haut de gamme conçues pour un fonctionnement silencieux, une durabilité et des performances optimales de transport vertical.',
     },
     orderForm: {
-      title: 'Formulaire de Commande de Limiteur de Vitesse — FasLift Solutions',
+      title: 'Formulaire de Commande de Limiteur de Vitesse — FasLift',
       description: 'Téléchargez et remplissez le formulaire officiel de spécification et de commande de limiteur de vitesse pour des exigences personnalisées.',
     },
     pageNotFound: {
-      title: 'Page Non Trouvée — FasLift Solutions',
+      title: 'Page Non Trouvée — FasLift',
       description: 'La page que vous recherchez n\'existe pas.',
     }
   },

@@ -167,7 +167,7 @@ const Contact: React.FC = () => {
               {/* Floating glass contact card */}
               <div className="map-glass-card absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-xs p-5 z-10">
                 <h4 className="font-bold text-white text-[16px] mb-3">
-                  FasLift Solutions
+                  FasLift
                 </h4>
                 <ul className="space-y-2.5">
                   <li className="flex items-center gap-3">

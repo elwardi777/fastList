@@ -31,7 +31,7 @@ const tr = {
     line2: 'ASANSÖR GÜVENLİK',
     line3: 'ÜRETİCİSİ',
     subtitle:
-      'FasLift Solutions, dikey taşımacılık altyapısı için birinci sınıf asansör hız regülatörleri ve asansör güvenlik sistemleri üretmektedir.',
+      'FasLift, dikey taşımacılık altyapısı için birinci sınıf asansör hız regülatörleri ve asansör güvenlik sistemleri üretmektedir.',
     cta: 'TEKLİF ALMAK İSTİYORUM',
     secondaryCta: 'TEKNİK DETAYLARI İNCELE',
     badge: 'ENDÜSTRİYEL GÜVENLİK SİSTEMLERİ',
@@ -71,7 +71,7 @@ const tr = {
   about: {
     title: 'KRİTİK ALTYAPILAR İÇİN TASARLANMIŞTIR',
     subtitle: 'Dikey taşımacılıkta güvenilirlik ve performans',
-    body: 'Kuruluşundan bu yana FasLift Solutions, asansör güvenlik sistemleri üretiminde kısa sürede önemli bir oyuncu haline gelmiştir. Hız regülatörlerimiz, güvenlik tertibatlarımız ve fren sistemlerimiz her gün birden fazla kıtada milyonlarca yolcuyu korumaktadır. Fabrikamızdan çıkan her bileşen, uluslararası EN 81 standartlarını aşan sıkı testlerden geçer — çünkü dikey taşımacılıkta tavize yer yoktur.',
+    body: 'Kuruluşundan bu yana FasLift, asansör güvenlik sistemleri üretiminde kısa sürede önemli bir oyuncu haline gelmiştir. Hız regülatörlerimiz, güvenlik tertibatlarımız ve fren sistemlerimiz her gün birden fazla kıtada milyonlarca yolcuyu korumaktadır. Fabrikamızdan çıkan her bileşen, uluslararası EN 81 standartlarını aşan sıkı testlerden geçer — çünkü dikey taşımacılıkta tavize yer yoktur.',
     years: 'Yıl',
     products: 'Ürün',
     countries: 'Ülke',
@@ -87,7 +87,7 @@ const tr = {
   precision: {
     subtitle: 'Dünya Çapında Güvenilir',
     heading: 'HIZ REGÜLATÖRÜ',
-    body: 'Kuruluşundan bu yana FasLift Solutions, asansör güvenlik sistemleri üretiminde kısa sürede önemli bir oyuncu haline gelmiştir. Hız regülatörlerimiz, güvenlik tertibatlarımız ve fren sistemlerimiz her gün birden fazla kıtada milyonlarca yolcuyu korumaktadır. Fabrikamızdan çıkan her bileşen, uluslararası EN 81 standartlarını aşan sıkı testlerden geçer — çünkü dikey taşımacılıkta tavize yer yoktur.',
+    body: 'Kuruluşundan bu yana FasLift, asansör güvenlik sistemleri üretiminde kısa sürede önemli bir oyuncu haline gelmiştir. Hız regülatörlerimiz, güvenlik tertibatlarımız ve fren sistemlerimiz her gün birden fazla kıtada milyonlarca yolcuyu korumaktadır. Fabrikamızdan çıkan her bileşen, uluslararası EN 81 standartlarını aşan sıkı testlerden geçer — çünkü dikey taşımacılıkta tavize yer yoktur.',
   },
   trusted: {
     badge: 'FAS LIFT Hız Regülatörleri',
@@ -134,8 +134,8 @@ const tr = {
       'Hassas mühendislikle üretilmiş asansör güvenlik bileşenleri. En yüksek uluslararası standartlara göre üretilmiş sektör lideri hız regülatörleri ve güvenlik sistemleri.',
     quickLinks: 'Hızlı Linkler',
     contact: 'İletişim',
-    rights: '© 2021 FasLift Solutions. Tüm hakları saklıdır.',
-    taglineTitle: 'FAS LIFT SOLUTIONS',
+    rights: '© 2021 FasLift. Tüm hakları saklıdır.',
+    taglineTitle: 'FAS LIFT',
     taglineDesc: 'Gelişmiş Hız Regülatörü ve Asansör Güvenlik Çözümleri.',
     products: 'Ürünler',
     about: 'Hakkımızda',
@@ -150,7 +150,7 @@ const tr = {
     address: 'İkitelli OSB, Aykosan Sanayi Sitesi\n34490 Başakşehir/İstanbul, Türkiye',
     phoneLabel: 'Tel',
     emailLabel: 'E-posta',
-    logoAlt: 'FasLift Solutions logosu',
+    logoAlt: 'FasLift logosu',
     businessCardQrAlt: 'FAS LIFT kartvizit QR kodu',
   },
   media: {
@@ -240,7 +240,7 @@ const tr = {
     breadcrumbCurrent: 'Üretim',
     sectionTitle: 'İLERİ ÜRETİM',
     sectionSubtitle: 'Güvenliği Nasıl İnşa Ediyoruz',
-    descParagraph1: 'FasLift Solutions\'ta üretim hatlarımız, en son teknolojiyi uzman el işçiliğiyle birleştirir. Her hız regülatörü ve güvenlik tertibatı bileşeni, sıkı kalite standartları altında şirket bünyesinde üretilmektedir.',
+    descParagraph1: 'FasLift\'te üretim hatlarımız, en son teknolojiyi uzman el işçiliğiyle birleştirir. Her hız regülatörü ve güvenlik tertibatı bileşeni, sıkı kalite standartları altında şirket bünyesinde üretilmektedir.',
     descParagraph2: 'Mikron düzeyinde CNC işlemeden çok aşamalı elektronik yük testlerine kadar, fabrikamızdan çıkan her sistemin tamamen güvenilir olmasını ve uluslararası EN 81 güvenlik standartlarına uygun olmasını sağlıyoruz.',
     feature1Title: 'Yüksek Hassasiyetli CNC Frezeleme',
     feature1Desc: 'Kusursuz bileşen geometrisi için gelişmiş çok eksenli bilgisayar kontrollü işleme.',
@@ -323,7 +323,7 @@ const tr = {
     timelineSectionBadge: 'Tarihimiz',
     timelineSectionHeading: 'On Yıllık İnovasyon',
     timeline2015Title: 'Şirket Kuruldu',
-    timeline2015Desc: 'FasLift Solutions, birinci sınıf asansör güvenlik teknolojileri yaratmak amacıyla kuruldu.',
+    timeline2015Desc: 'FasLift, birinci sınıf asansör güvenlik teknolojileri yaratmak amacıyla kuruldu.',
     timeline2016Title: 'İlk Üretim',
     timeline2016Desc: 'Hassas hız regülatörleri ve asansör fren sistemleri üretimine başlandı.',
     timeline2017Title: 'Genişleme',
@@ -335,7 +335,7 @@ const tr = {
     timeline2023Title: 'Akıllı Teknoloji',
     timeline2023Desc: 'Yeni nesil akıllı hız regülatörü teknolojisi geliştirildi.',
     timeline2025Title: 'Küresel Marka',
-    timeline2025Desc: 'FasLift Solutions, küresel bir asansör güvenlik çözümleri markası haline geldi.',
+    timeline2025Desc: 'FasLift, küresel bir asansör güvenlik çözümleri markası haline geldi.',
     altCompanyBuilding: 'FAS LIFT Şirket Binası',
     altWorldwide: 'FAS LIFT Dünya Çapında Varlık',
     altManufacturing: 'Üretim Hattı',
@@ -460,7 +460,7 @@ const tr = {
     orderFormButton: 'Sipariş Formunu İndir',
     orderFormTooltip: 'Hız regülatörü sipariş formu PDF dosyasını aç',
     precisionImageAlt: 'FAS LIFT hız regülatörü',
-    precisionLogoAlt: 'FAS LIFT Solutions',
+    precisionLogoAlt: 'FAS LIFT',
     weightPrev: 'Önceki germe ağırlığı',
     weightNext: 'Sonraki germe ağırlığı',
     weightDot: 'Germe ağırlığı {{number}}',
@@ -696,50 +696,50 @@ const tr = {
   seo: {
     home: {
       title: 'FasLift — Resmi Web Sitesi | Asansör Güvenlik Çözümleri',
-      description: 'FasLift (FasLift Solutions) - Resmi web sitesi. Birinci sınıf asansör hız regülatörleri, gergi kasnakları ve güvenlik bileşenleri üreticisi. EN 81-20/50 sertifikalı.',
+      description: 'FasLift - Resmi web sitesi. Birinci sınıf asansör hız regülatörleri, gergi kasnakları ve güvenlik bileşenleri üreticisi. EN 81-20/50 sertifikalı.',
     },
     about: {
-      title: 'Hakkımızda — FasLift Solutions',
-      description: 'FasLift Solutions\'ın tarihi, vizyonu ve yüksek hassasiyetli asansör güvenlik standartları hakkında bilgi edinin.',
+      title: 'Hakkımızda — FasLift',
+      description: 'FasLift\'in tarihi, vizyonu ve yüksek hassasiyetli asansör güvenlik standartları hakkında bilgi edinin.',
     },
     catalog: {
-      title: 'Ürün Kataloğu ve Belgeler — FasLift Solutions',
+      title: 'Ürün Kataloğu ve Belgeler — FasLift',
       description: 'FasLift hız regülatörleri için en son teknik katalogları, broşürleri ve sertifikaları görüntüleyin ve indirin.',
     },
     contact: {
-      title: 'İletişim — FasLift Solutions',
+      title: 'İletişim — FasLift',
       description: 'Asansör güvenlik sistemi teklifleri ve teknik sorularınız için uzman mühendislik ekibimizle iletişime geçin.',
     },
     support: {
-      title: 'Teknik Destek — FasLift Solutions',
+      title: 'Teknik Destek — FasLift',
       description: 'FasLift sistemleri için uzman teşhisleri, bakım kılavuzları, kablolama kurulumları ve orijinal yedek parça desteği.',
     },
     production: {
-      title: 'Hassas Üretim Süreci — FasLift Solutions',
+      title: 'Hassas Üretim Süreci — FasLift',
       description: 'Yüksek hassasiyetli CNC işlememizi, robotik montaj hatlarımızı ve %100 yük testi kalite protokollerimizi keşfedin.',
     },
     gallery: {
-      title: 'Ürün ve Medya Galerisi — FasLift Solutions',
+      title: 'Ürün ve Medya Galerisi — FasLift',
       description: 'FasLift asansör güvenlik bileşenlerinin yüksek çözünürlüklü fotoğraflarını ve mühendislik detaylarını inceleyin.',
     },
     governor: {
-      title: 'Hız Regülatörleri — FasLift Solutions',
+      title: 'Hız Regülatörleri — FasLift',
       description: 'EN 81-20/50 standartlarına göre TÜV SÜD tarafından sertifikalandırılmış FS-01 tek yönlü ve çift yönlü hız regülatörleri.',
     },
     tensionerPulley: {
-      title: 'Gergi Kasnağı — FasLift Solutions',
+      title: 'Gergi Kasnağı — FasLift',
       description: 'Güvenilir halat gerdirme ve EN 81 standartlarına uygun güvenlik için tasarlanmış yüksek hassasiyetli asansör gergi kasnağı sistemleri.',
     },
     pulleys: {
-      title: 'Kasnaklar — FasLift Solutions',
+      title: 'Kasnaklar — FasLift',
       description: 'Sessiz çalışma, dayanıklılık ve sorunsuz dikey taşımacılık performansı için tasarlanmış birinci sınıf asansör kasnakları.',
     },
     orderForm: {
-      title: 'Hız Regülatörü Sipariş Formu — FasLift Solutions',
+      title: 'Hız Regülatörü Sipariş Formu — FasLift',
       description: 'Özel gereksinimleriniz için resmi hız regülatörü teknik özellik ve sipariş formunu indirin ve doldurun.',
     },
     pageNotFound: {
-      title: 'Sayfa Bulunamadı — FasLift Solutions',
+      title: 'Sayfa Bulunamadı — FasLift',
       description: 'Aradığınız sayfa mevcut değil.',
     }
   },

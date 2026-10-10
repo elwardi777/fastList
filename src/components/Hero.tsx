@@ -216,7 +216,7 @@ const Hero: React.FC = () => {
             <p className="text-base sm:text-lg text-[#334155] leading-relaxed max-w-xl font-normal">
               {t(
                 'hero.subtitle',
-                'FasLift Solutions manufactures premium elevator speed governors and elevator safety systems for modern vertical transportation infrastructure.'
+                'FasLift manufactures premium elevator speed governors and elevator safety systems for modern vertical transportation infrastructure.'
               )}
             </p>
 

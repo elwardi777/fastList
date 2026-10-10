@@ -449,7 +449,7 @@ const Footer: React.FC = () => {
           <div className="ft-bottom-inner">
             <p className="ft-copy">
               © 2021{' '}
-              <span style={{ fontWeight: 600, color: '#0B3D78' }}>FasLift Solutions</span>
+              <span style={{ fontWeight: 600, color: '#0B3D78' }}>FasLift</span>
               {' '}· {t('footer.rightsReserved')}
             </p>
           </div>

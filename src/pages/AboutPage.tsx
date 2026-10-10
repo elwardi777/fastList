@@ -534,7 +534,7 @@ function ContactInformationSection() {
 
         <FadeIn delay={0.1} className="flex flex-col items-center w-full">
           <div className="text-[#6b7280] font-light text-[14px] md:text-[15px] leading-[1.8] flex flex-col items-center w-full">
-            <p>FAS LIFT SOLUTIONS</p>
+            <p>FAS LIFT</p>
             <p style={{ whiteSpace: 'pre-line' }}>{t('footer.address')}</p>
             <p>
               {t('footer.phoneLabel')}: <span onClick={() => window.location.href = 'tel:+212531613923'} className="hover-group"><span className="anim-text-shift font-normal transition-colors duration-300">+212 531 613 923</span></span> | Fax: <span onClick={() => window.location.href = 'tel:+212541132463'} className="hover-group"><span className="anim-text-shift font-normal transition-colors duration-300">+212 541 132 463</span></span>

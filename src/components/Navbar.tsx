@@ -212,7 +212,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         >
           <img
             src="/images/governor-4-removebg-preview.png"
-            alt="FasLift Solutions"
+            alt="FasLift"
             className="h-auto max-h-[56px] w-auto"
             draggable={false}
           />
@@ -447,7 +447,7 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
         <Link to="/" className="relative shrink-0 flex items-center">
           <img
             src="/images/governor-4-removebg-preview.png"
-            alt="FasLift Solutions"
+            alt="FasLift"
             className="h-auto max-h-[56px] w-auto transition-opacity hover:opacity-80"
           />
         </Link>

@@ -31,7 +31,7 @@ const en = {
     line2: 'ELEVATOR SAFETY',
     line3: 'MANUFACTURER',
     subtitle:
-      'FasLift Solutions manufactures premium elevator speed governors and elevator safety systems for modern vertical transportation infrastructure.',
+      'FasLift manufactures premium elevator speed governors and elevator safety systems for modern vertical transportation infrastructure.',
     cta: 'I WANT TO GET A QUOTE',
     secondaryCta: 'VIEW TECHNICAL DETAILS',
     badge: 'INDUSTRIAL SAFETY SYSTEMS',
@@ -71,7 +71,7 @@ const en = {
   about: {
     title: 'ENGINEERED FOR CRITICAL INFRASTRUCTURE',
     subtitle: 'Reliability and performance in vertical transportation',
-    body: 'Since its inception, FasLift Solutions has rapidly established itself as a major player in the manufacturing of elevator safety systems. Our overspeed governors, safety gears, and braking systems protect millions of passengers every day across multiple continents. Every component leaving our factory undergoes rigorous testing exceeding international EN 81 standards — because in vertical transportation, there is no place for compromise.',
+    body: 'Since its inception, FasLift has rapidly established itself as a major player in the manufacturing of elevator safety systems. Our overspeed governors, safety gears, and braking systems protect millions of passengers every day across multiple continents. Every component leaving our factory undergoes rigorous testing exceeding international EN 81 standards — because in vertical transportation, there is no place for compromise.',
     years: 'Years',
     products: 'Products',
     countries: 'Countries',
@@ -87,7 +87,7 @@ const en = {
   precision: {
     subtitle: 'Trusted Worldwide',
     heading: 'SPEED GOVERNOR',
-    body: 'Since its inception, FasLift Solutions has rapidly established itself as a major player in the manufacturing of elevator safety systems. Our overspeed governors, safety gears, and braking systems protect millions of passengers every day across multiple continents. Every component leaving our factory undergoes rigorous testing exceeding international EN 81 standards — because in vertical transportation, there is no place for compromise.',
+    body: 'Since its inception, FasLift has rapidly established itself as a major player in the manufacturing of elevator safety systems. Our overspeed governors, safety gears, and braking systems protect millions of passengers every day across multiple continents. Every component leaving our factory undergoes rigorous testing exceeding international EN 81 standards — because in vertical transportation, there is no place for compromise.',
   },
   trusted: {
     badge: 'FAS LIFT Overspeed Governors',
@@ -134,8 +134,8 @@ const en = {
       'Precision-engineered elevator safety components. Industry-leading speed governors and safety systems built to the highest international standards.',
     quickLinks: 'Quick Links',
     contact: 'Contact',
-    rights: '© 2021 FasLift Solutions. All rights reserved.',
-    taglineTitle: 'FAS LIFT SOLUTIONS',
+    rights: '© 2021 FasLift. All rights reserved.',
+    taglineTitle: 'FAS LIFT',
     taglineDesc: 'Advanced Speed Governor & Fleet Safety Solutions.',
     products: 'Products',
     about: 'About',
@@ -150,7 +150,7 @@ const en = {
     address: 'Ikitelli OSB, Aykosan Industrial Estate\n34490 Basaksehir/Istanbul, Turkey',
     phoneLabel: 'Phone',
     emailLabel: 'Email',
-    logoAlt: 'FasLift Solutions logo',
+    logoAlt: 'FasLift logo',
     businessCardQrAlt: 'FAS LIFT business card QR code',
   },
   media: {
@@ -240,7 +240,7 @@ const en = {
     breadcrumbCurrent: 'Production',
     sectionTitle: 'ADVANCED MANUFACTURING',
     sectionSubtitle: 'How We Build Safety',
-    descParagraph1: 'At FasLift Solutions, our production lines combine state-of-the-art automation with expert craftsmanship. Every speed governor and safety gear component is manufactured in-house under strict quality standards.',
+    descParagraph1: 'At FasLift, our production lines combine state-of-the-art automation with expert craftsmanship. Every speed governor and safety gear component is manufactured in-house under strict quality standards.',
     descParagraph2: 'From micron-level CNC machining to multi-stage electronic load testing, we ensure that every system leaving our factory is fully reliable and compliant with international EN 81 safety standards.',
     feature1Title: 'High-Precision CNC Milling',
     feature1Desc: 'Advanced multi-axis computer-controlled machining for flawless component geometry.',
@@ -323,7 +323,7 @@ const en = {
     timelineSectionBadge: 'Our History',
     timelineSectionHeading: 'A Decade of Innovation',
     timeline2015Title: 'Company Founded',
-    timeline2015Desc: 'FasLift Solutions was founded to create premium elevator safety technologies.',
+    timeline2015Desc: 'FasLift was founded to create premium elevator safety technologies.',
     timeline2016Title: 'First Production',
     timeline2016Desc: 'Started manufacturing precision speed governors and elevator braking systems.',
     timeline2017Title: 'Expansion',
@@ -335,7 +335,7 @@ const en = {
     timeline2023Title: 'Smart Technology',
     timeline2023Desc: 'Developed next-generation smart overspeed governor technology.',
     timeline2025Title: 'Global Brand',
-    timeline2025Desc: 'FasLift Solutions becomes an international elevator safety solutions brand.',
+    timeline2025Desc: 'FasLift becomes an international elevator safety solutions brand.',
     anniversaryTitle: 'From 2021 to the Future...',
     anniversaryTagline: 'FROM 2021 TO THE FUTURE',
     anniversaryP1: 'Every great journey begins with a single step.',
@@ -460,7 +460,7 @@ const en = {
     orderFormButton: 'Download Order Form',
     orderFormTooltip: 'Open the speed governor order form PDF',
     precisionImageAlt: 'FAS LIFT overspeed governor',
-    precisionLogoAlt: 'FAS LIFT Solutions',
+    precisionLogoAlt: 'FAS LIFT',
     weightPrev: 'Previous tension weight',
     weightNext: 'Next tension weight',
     weightDot: 'Tension weight {{number}}',
@@ -696,50 +696,50 @@ const en = {
   seo: {
     home: {
       title: 'FasLift — Official Website | Elevator Safety Solutions',
-      description: 'FasLift (FasLift Solutions) - Official Website. Leading manufacturer of certified elevator speed governors, overspeed governors, and safety components certified EN 81-20/50.',
+      description: 'FasLift - Official Website. Leading manufacturer of certified elevator speed governors, overspeed governors, and safety components certified EN 81-20/50.',
     },
     about: {
-      title: 'About Us — FasLift Solutions',
-      description: 'Learn about the history, vision, and high-precision elevator safety standards of FasLift Solutions.',
+      title: 'About Us — FasLift',
+      description: 'Learn about the history, vision, and high-precision elevator safety standards of FasLift.',
     },
     catalog: {
-      title: 'Product Catalog & Documents — FasLift Solutions',
+      title: 'Product Catalog & Documents — FasLift',
       description: 'View and download the latest technical catalogs, brochures, and certificates for FasLift overspeed governors.',
     },
     contact: {
-      title: 'Contact Us — FasLift Solutions',
+      title: 'Contact Us — FasLift',
       description: 'Get in touch with our expert engineering team for elevator safety system quotes and technical inquiries.',
     },
     support: {
-      title: 'Technical Support — FasLift Solutions',
+      title: 'Technical Support — FasLift',
       description: 'Expert diagnostics, maintenance guides, wiring setup, and genuine spare parts support for FasLift systems.',
     },
     production: {
-      title: 'Precision Manufacturing Process — FasLift Solutions',
+      title: 'Precision Manufacturing Process — FasLift',
       description: 'Explore our high-precision CNC machining, robotic assembly lines, and 100% load testing quality protocols.',
     },
     gallery: {
-      title: 'Product & Media Gallery — FasLift Solutions',
+      title: 'Product & Media Gallery — FasLift',
       description: 'Browse high-resolution photographs and engineering details of FasLift elevator safety components.',
     },
     governor: {
-      title: 'Overspeed Governors — FasLift Solutions',
+      title: 'Overspeed Governors — FasLift',
       description: 'FS-01 monodirectional and bidirectional overspeed governors certified by TÜV SÜD according to EN 81-20/50.',
     },
     tensionerPulley: {
-      title: 'Tensioner Pulley — FasLift Solutions',
+      title: 'Tensioner Pulley — FasLift',
       description: 'High-precision elevator tensioner pulley systems engineered for reliable rope tensioning and safety compliance with EN 81 standards.',
     },
     pulleys: {
-      title: 'Pulleys — FasLift Solutions',
+      title: 'Pulleys — FasLift',
       description: 'Premium elevator pulleys designed for silent operation, durability, and smooth vertical transportation performance.',
     },
     orderForm: {
-      title: 'Overspeed Governor Order Form — FasLift Solutions',
+      title: 'Overspeed Governor Order Form — FasLift',
       description: 'Download and fill out the official overspeed governor specification and order form for custom requirements.',
     },
     pageNotFound: {
-      title: 'Page Not Found — FasLift Solutions',
+      title: 'Page Not Found — FasLift',
       description: 'The page you are looking for does not exist.',
     }
   },
