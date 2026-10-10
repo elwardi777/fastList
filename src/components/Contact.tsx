@@ -16,16 +16,14 @@ const SectionHeading: React.FC<{ children: string; dark?: boolean }> = ({
   <div className="flex items-center gap-4 mb-10 md:mb-12">
     <div className={`w-8 h-[2px] ${dark ? 'bg-[#0B3D78]/30' : 'bg-white/30'}`} />
     <span
-      className={`font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.15em] uppercase ${
-        dark ? 'text-[#0B3D78]/50' : 'text-white/50'
-      }`}
+      className={`font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.15em] uppercase ${dark ? 'text-[#0B3D78]/50' : 'text-white/50'
+        }`}
     >
       {children}
     </span>
     <div
-      className={`flex-1 h-[0.5px] ${
-        dark ? 'bg-[#0B3D78]/[0.06]' : 'bg-white/[0.06]'
-      }`}
+      className={`flex-1 h-[0.5px] ${dark ? 'bg-[#0B3D78]/[0.06]' : 'bg-white/[0.06]'
+        }`}
     />
   </div>
 );
@@ -49,12 +47,12 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    
+
     const messageText = `Hello, my name is ${formData.name}.\nEmail: ${formData.email}\nMessage: ${formData.message}`;
     const whatsappUrl = `https://wa.me/905316139223?text=${encodeURIComponent(messageText)}`;
-    
+
     window.open(whatsappUrl, '_blank');
-    
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -163,7 +161,7 @@ const Contact: React.FC = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="FasLift Solutions Location"
+                title="FasLift Location"
               />
 
               {/* Floating glass contact card */}
